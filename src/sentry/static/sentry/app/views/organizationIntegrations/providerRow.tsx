@@ -1,4 +1,3 @@
-import {Box, Flex} from 'reflexbox';
 import {withTheme} from 'emotion-theming';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -125,19 +124,19 @@ export default class ProviderRow extends React.Component<Props> {
   render() {
     return (
       <PanelItem p={0} flexDirection="column" data-test-id={this.props.provider.key}>
-        <Flex alignItems="center" p={2}>
+        <PanelItemLeft>
           <PluginIcon size={36} pluginId={this.props.provider.key} />
-          <Box px={2} flex={1}>
+          <ProviderInfoWrapper>
             <ProviderName>{this.props.provider.name}</ProviderName>
             <ProviderDetails>
               <Status enabled={this.isEnabled} />
-              <StyledLink onClick={this.openModal}>Learn More</StyledLink>
+              <StyledLink onClick={this.openModal}>{t('Learn More')}</StyledLink>
             </ProviderDetails>
-          </Box>
-          <Box>
+          </ProviderInfoWrapper>
+          <ButtonWrapper>
             <Button size="small" onClick={this.openModal} {...this.buttonProps} />
-          </Box>
-        </Flex>
+          </ButtonWrapper>
+        </PanelItemLeft>
         {this.renderIntegrations()}
       </PanelItem>
     );
@@ -148,10 +147,27 @@ const ProviderName = styled('div')`
   font-weight: bold;
 `;
 
-const ProviderDetails = styled(Flex)`
+const ProviderDetails = styled('div')`
+  display: flex;
   align-items: center;
   margin-top: 6px;
   font-size: 0.8em;
+`;
+
+const PanelItemLeft = styled('div')`
+  display: flex;
+  padding: ${space(0.25)};
+  align-items: center;
+`;
+
+const ProviderInfoWrapper = styled('div')`
+  padding: 0 ${space(0.25)};
+  display: flex;
+  flex: 1;
+`;
+
+const ButtonWrapper = styled('div')`
+  display: flex;
 `;
 
 type StatusProps = {

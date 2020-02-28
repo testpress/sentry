@@ -369,8 +369,9 @@ const IconContainer = styled('div')`
 
 const MenuItemWrapper = styled('div')<{
   py?: number;
+  disabled?: boolean;
 }>`
-  cursor: pointer;
+  cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
   display: flex;
   align-items: center;
   font-size: 13px;
@@ -383,7 +384,7 @@ const MenuItemWrapper = styled('div')<{
 `;
 
 const InviteMemberLink = styled(Link)`
-  color: ${p => p.theme.textColor};
+  color: ${p => (p.disabled ? p.theme.disabled : p.theme.textColor)};
 `;
 
 const Label = styled(TextOverflow)`

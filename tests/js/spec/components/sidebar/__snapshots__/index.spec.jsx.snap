@@ -55,73 +55,80 @@ exports[`Sidebar SidebarDropdown can open "Switch Organization" sub-menu 1`] = `
                 "alignItems": "center",
               }
             }
-            target="_self"
             to="/organizations/new/"
           >
-            <Link
+            <Anchor
               className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
               data-test-id="sidebar-create-org"
-              onlyActiveOnIndex={false}
+              href="/organizations/new/"
               style={
                 Object {
                   "alignItems": "center",
                 }
               }
-              target="_self"
-              to="/organizations/new/"
             >
-              <a
-                className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
+              <Component
+                className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
                 data-test-id="sidebar-create-org"
-                onClick={[Function]}
+                href="/organizations/new/"
                 style={
                   Object {
                     "alignItems": "center",
                   }
                 }
-                target="_self"
               >
-                <MenuItemLabel
-                  hasMenu={false}
+                <a
+                  className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                  data-test-id="sidebar-create-org"
+                  href="/organizations/new/"
+                  style={
+                    Object {
+                      "alignItems": "center",
+                    }
+                  }
                 >
-                  <span
-                    className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                  <MenuItemLabel
+                    hasMenu={false}
                   >
-                    <MenuItemLabelWithIcon>
-                      <span
-                        className="css-8m01f9-MenuItemLabelWithIcon ev3suul1"
-                      >
-                        <StyledIconAdd>
-                          <ForwardRef(IconAdd)
-                            className="css-4qjexj-StyledIconAdd ev3suul0"
-                          >
-                            <svg
+                    <span
+                      className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                    >
+                      <MenuItemLabelWithIcon>
+                        <span
+                          className="css-8m01f9-MenuItemLabelWithIcon ev3suul1"
+                        >
+                          <StyledIconAdd>
+                            <ForwardRef(IconAdd)
                               className="css-4qjexj-StyledIconAdd ev3suul0"
-                              fill="currentColor"
-                              height="16px"
-                              viewBox="0 0 16 16"
-                              width="16px"
                             >
-                              <g>
-                                <path
-                                  d="M15.19,8.75H.81a.75.75,0,1,1,0-1.5H15.19a.75.75,0,0,1,0,1.5Z"
-                                />
-                                <path
-                                  d="M8,15.94a.76.76,0,0,1-.75-.75V.81a.75.75,0,0,1,1.5,0V15.19A.76.76,0,0,1,8,15.94Z"
-                                />
-                              </g>
-                            </svg>
-                          </ForwardRef(IconAdd)>
-                        </StyledIconAdd>
-                        <span>
-                          Create a new organization
+                              <svg
+                                className="css-4qjexj-StyledIconAdd ev3suul0"
+                                fill="currentColor"
+                                height="16px"
+                                viewBox="0 0 16 16"
+                                width="16px"
+                              >
+                                <g>
+                                  <path
+                                    d="M15.19,8.75H.81a.75.75,0,1,1,0-1.5H15.19a.75.75,0,0,1,0,1.5Z"
+                                  />
+                                  <path
+                                    d="M8,15.94a.76.76,0,0,1-.75-.75V.81a.75.75,0,0,1,1.5,0V15.19A.76.76,0,0,1,8,15.94Z"
+                                  />
+                                </g>
+                              </svg>
+                            </ForwardRef(IconAdd)>
+                          </StyledIconAdd>
+                          <span>
+                            Create a new organization
+                          </span>
                         </span>
-                      </span>
-                    </MenuItemLabelWithIcon>
-                  </span>
-                </MenuItemLabel>
-              </a>
-            </Link>
+                      </MenuItemLabelWithIcon>
+                    </span>
+                  </MenuItemLabel>
+                </a>
+              </Component>
+            </Anchor>
           </Link>
         </SidebarMenuItemLink>
       </StyledSidebarMenuItemLink>
@@ -332,33 +339,32 @@ exports[`Sidebar SidebarDropdown can open Sidebar org/name dropdown menu 1`] = `
         >
           <Link
             className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-            target="_self"
             to="/settings/org-slug/"
           >
-            <Link
+            <Anchor
               className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-              onlyActiveOnIndex={false}
-              style={Object {}}
-              target="_self"
-              to="/settings/org-slug/"
+              href="/settings/org-slug/"
             >
-              <a
-                className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-                onClick={[Function]}
-                style={Object {}}
-                target="_self"
+              <Component
+                className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                href="/settings/org-slug/"
               >
-                <MenuItemLabel
-                  hasMenu={false}
+                <a
+                  className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                  href="/settings/org-slug/"
                 >
-                  <span
-                    className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                  <MenuItemLabel
+                    hasMenu={false}
                   >
-                    Organization settings
-                  </span>
-                </MenuItemLabel>
-              </a>
-            </Link>
+                    <span
+                      className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                    >
+                      Organization settings
+                    </span>
+                  </MenuItemLabel>
+                </a>
+              </Component>
+            </Anchor>
           </Link>
         </SidebarMenuItemLink>
       </StyledSidebarMenuItemLink>
@@ -375,33 +381,32 @@ exports[`Sidebar SidebarDropdown can open Sidebar org/name dropdown menu 1`] = `
         >
           <Link
             className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-            target="_self"
             to="/settings/org-slug/teams/"
           >
-            <Link
+            <Anchor
               className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-              onlyActiveOnIndex={false}
-              style={Object {}}
-              target="_self"
-              to="/settings/org-slug/teams/"
+              href="/settings/org-slug/teams/"
             >
-              <a
-                className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-                onClick={[Function]}
-                style={Object {}}
-                target="_self"
+              <Component
+                className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                href="/settings/org-slug/teams/"
               >
-                <MenuItemLabel
-                  hasMenu={false}
+                <a
+                  className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                  href="/settings/org-slug/teams/"
                 >
-                  <span
-                    className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                  <MenuItemLabel
+                    hasMenu={false}
                   >
-                    Teams
-                  </span>
-                </MenuItemLabel>
-              </a>
-            </Link>
+                    <span
+                      className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                    >
+                      Teams
+                    </span>
+                  </MenuItemLabel>
+                </a>
+              </Component>
+            </Anchor>
           </Link>
         </SidebarMenuItemLink>
       </StyledSidebarMenuItemLink>
@@ -525,40 +530,20 @@ exports[`Sidebar SidebarDropdown can open Sidebar org/name dropdown menu 1`] = `
         className="css-j625pk-UserSummary e10773n31"
         to="/settings/account/details/"
       >
-        <Link
+        <Anchor
           className="css-j625pk-UserSummary e10773n31"
-          onlyActiveOnIndex={false}
-          style={Object {}}
-          to="/settings/account/details/"
+          href="/settings/account/details/"
         >
-          <a
-            className="css-j625pk-UserSummary e10773n31"
-            onClick={[Function]}
-            style={Object {}}
+          <Component
+            className="e10773n31 css-i3fzog-Anchor-UserSummary e18jdd0v0"
+            href="/settings/account/details/"
           >
-            <UserBadgeNoOverflow
-              avatarSize={32}
-              user={
-                Object {
-                  "email": "foo@example.com",
-                  "flags": Object {
-                    "newsletter_consent_prompt": false,
-                  },
-                  "hasPasswordAuth": true,
-                  "id": "1",
-                  "isAuthenticated": true,
-                  "name": "Foo Bar",
-                  "options": Object {
-                    "timezone": "UTC",
-                  },
-                  "permissions": Set {},
-                  "username": "foo@example.com",
-                }
-              }
+            <a
+              className="e10773n31 css-i3fzog-Anchor-UserSummary e18jdd0v0"
+              href="/settings/account/details/"
             >
-              <IdBadge
+              <UserBadgeNoOverflow
                 avatarSize={32}
-                className="css-1b4dtj5-UserBadgeNoOverflow e10773n32"
                 user={
                   Object {
                     "email": "foo@example.com",
@@ -577,63 +562,62 @@ exports[`Sidebar SidebarDropdown can open Sidebar org/name dropdown menu 1`] = `
                   }
                 }
               >
-                <InlineErrorBoundary
-                  mini={true}
+                <IdBadge
+                  avatarSize={32}
+                  className="css-1b4dtj5-UserBadgeNoOverflow e10773n32"
+                  user={
+                    Object {
+                      "email": "foo@example.com",
+                      "flags": Object {
+                        "newsletter_consent_prompt": false,
+                      },
+                      "hasPasswordAuth": true,
+                      "id": "1",
+                      "isAuthenticated": true,
+                      "name": "Foo Bar",
+                      "options": Object {
+                        "timezone": "UTC",
+                      },
+                      "permissions": Set {},
+                      "username": "foo@example.com",
+                    }
+                  }
                 >
-                  <ErrorBoundary
-                    className="css-1wuy21l-InlineErrorBoundary e83vi020"
+                  <InlineErrorBoundary
                     mini={true}
                   >
-                    <UserBadge
-                      avatarSize={32}
-                      className="css-1b4dtj5-UserBadgeNoOverflow e10773n32"
-                      user={
-                        Object {
-                          "email": "foo@example.com",
-                          "flags": Object {
-                            "newsletter_consent_prompt": false,
-                          },
-                          "hasPasswordAuth": true,
-                          "id": "1",
-                          "isAuthenticated": true,
-                          "name": "Foo Bar",
-                          "options": Object {
-                            "timezone": "UTC",
-                          },
-                          "permissions": Set {},
-                          "username": "foo@example.com",
-                        }
-                      }
+                    <ErrorBoundary
+                      className="css-1wuy21l-InlineErrorBoundary e83vi020"
+                      mini={true}
                     >
-                      <StyledUserBadge
+                      <UserBadge
+                        avatarSize={32}
                         className="css-1b4dtj5-UserBadgeNoOverflow e10773n32"
+                        user={
+                          Object {
+                            "email": "foo@example.com",
+                            "flags": Object {
+                              "newsletter_consent_prompt": false,
+                            },
+                            "hasPasswordAuth": true,
+                            "id": "1",
+                            "isAuthenticated": true,
+                            "name": "Foo Bar",
+                            "options": Object {
+                              "timezone": "UTC",
+                            },
+                            "permissions": Set {},
+                            "username": "foo@example.com",
+                          }
+                        }
                       >
-                        <div
-                          className="e10773n32 css-qu415y-StyledUserBadge-UserBadgeNoOverflow e31z2f80"
+                        <StyledUserBadge
+                          className="css-1b4dtj5-UserBadgeNoOverflow e10773n32"
                         >
-                          <StyledAvatar
-                            gravatar={false}
-                            size={32}
-                            user={
-                              Object {
-                                "email": "foo@example.com",
-                                "flags": Object {
-                                  "newsletter_consent_prompt": false,
-                                },
-                                "hasPasswordAuth": true,
-                                "id": "1",
-                                "isAuthenticated": true,
-                                "name": "Foo Bar",
-                                "options": Object {
-                                  "timezone": "UTC",
-                                },
-                                "permissions": Set {},
-                                "username": "foo@example.com",
-                              }
-                            }
+                          <div
+                            className="e10773n32 css-qu415y-StyledUserBadge-UserBadgeNoOverflow e31z2f80"
                           >
-                            <UserAvatar
-                              className="css-593o0g-StyledAvatar e31z2f84"
+                            <StyledAvatar
                               gravatar={false}
                               size={32}
                               user={
@@ -654,45 +638,54 @@ exports[`Sidebar SidebarDropdown can open Sidebar org/name dropdown menu 1`] = `
                                 }
                               }
                             >
-                              <BaseAvatar
+                              <UserAvatar
                                 className="css-593o0g-StyledAvatar e31z2f84"
-                                gravatarId="foo@example.com"
-                                hasTooltip={false}
-                                letterId="foo@example.com"
-                                round={true}
+                                gravatar={false}
                                 size={32}
-                                style={Object {}}
-                                title="Foo Bar"
-                                tooltip="Foo Bar (foo@example.com)"
-                                type="letter_avatar"
-                                uploadId=""
-                                uploadPath="avatar"
+                                user={
+                                  Object {
+                                    "email": "foo@example.com",
+                                    "flags": Object {
+                                      "newsletter_consent_prompt": false,
+                                    },
+                                    "hasPasswordAuth": true,
+                                    "id": "1",
+                                    "isAuthenticated": true,
+                                    "name": "Foo Bar",
+                                    "options": Object {
+                                      "timezone": "UTC",
+                                    },
+                                    "permissions": Set {},
+                                    "username": "foo@example.com",
+                                  }
+                                }
                               >
-                                <Tooltip
-                                  containerDisplayMode="inline-block"
-                                  disabled={true}
-                                  position="top"
-                                  title="Foo Bar (foo@example.com)"
+                                <BaseAvatar
+                                  className="css-593o0g-StyledAvatar e31z2f84"
+                                  gravatarId="foo@example.com"
+                                  hasTooltip={false}
+                                  letterId="foo@example.com"
+                                  round={true}
+                                  size={32}
+                                  style={Object {}}
+                                  title="Foo Bar"
+                                  tooltip="Foo Bar (foo@example.com)"
+                                  type="letter_avatar"
+                                  uploadId=""
+                                  uploadPath="avatar"
                                 >
-                                  <StyledBaseAvatar
-                                    className="avatar css-593o0g-StyledAvatar e31z2f84"
-                                    gravatarId="foo@example.com"
-                                    letterId="foo@example.com"
-                                    loaded={true}
-                                    round={true}
-                                    style={
-                                      Object {
-                                        "height": "32px",
-                                        "width": "32px",
-                                      }
-                                    }
-                                    title="Foo Bar"
-                                    type="letter_avatar"
-                                    uploadId=""
-                                    uploadPath="avatar"
+                                  <Tooltip
+                                    containerDisplayMode="inline-block"
+                                    disabled={true}
+                                    position="top"
+                                    title="Foo Bar (foo@example.com)"
                                   >
-                                    <span
-                                      className="avatar e31z2f84 css-13sepyg-StyledBaseAvatar-StyledAvatar e147uwb0"
+                                    <StyledBaseAvatar
+                                      className="avatar css-593o0g-StyledAvatar e31z2f84"
+                                      gravatarId="foo@example.com"
+                                      letterId="foo@example.com"
+                                      loaded={true}
+                                      round={true}
                                       style={
                                         Object {
                                           "height": "32px",
@@ -701,93 +694,107 @@ exports[`Sidebar SidebarDropdown can open Sidebar org/name dropdown menu 1`] = `
                                       }
                                       title="Foo Bar"
                                       type="letter_avatar"
+                                      uploadId=""
+                                      uploadPath="avatar"
                                     >
-                                      <ForwardRef
-                                        displayName="Foo Bar"
-                                        identifier="foo@example.com"
-                                        round={true}
+                                      <span
+                                        className="avatar e31z2f84 css-13sepyg-StyledBaseAvatar-StyledAvatar e147uwb0"
+                                        style={
+                                          Object {
+                                            "height": "32px",
+                                            "width": "32px",
+                                          }
+                                        }
+                                        title="Foo Bar"
+                                        type="letter_avatar"
                                       >
-                                        <LetterAvatar
+                                        <ForwardRef
                                           displayName="Foo Bar"
-                                          forwardedRef={null}
                                           identifier="foo@example.com"
                                           round={true}
                                         >
-                                          <Component
-                                            className="css-1oxr9oh-LetterAvatar e12lgfev0"
+                                          <LetterAvatar
                                             displayName="Foo Bar"
                                             forwardedRef={null}
                                             identifier="foo@example.com"
                                             round={true}
                                           >
-                                            <svg
+                                            <Component
                                               className="css-1oxr9oh-LetterAvatar e12lgfev0"
-                                              viewBox="0 0 120 120"
+                                              displayName="Foo Bar"
+                                              forwardedRef={null}
+                                              identifier="foo@example.com"
+                                              round={true}
                                             >
-                                              <rect
-                                                fill="#315cac"
-                                                height="120"
-                                                rx="15"
-                                                ry="15"
-                                                width="120"
-                                                x="0"
-                                                y="0"
-                                              />
-                                              <text
-                                                fill="#FFFFFF"
-                                                fontSize="65"
-                                                style={
-                                                  Object {
-                                                    "dominantBaseline": "central",
-                                                  }
-                                                }
-                                                textAnchor="middle"
-                                                x="50%"
-                                                y="50%"
+                                              <svg
+                                                className="css-1oxr9oh-LetterAvatar e12lgfev0"
+                                                viewBox="0 0 120 120"
                                               >
-                                                FB
-                                              </text>
-                                            </svg>
-                                          </Component>
-                                        </LetterAvatar>
-                                      </ForwardRef>
-                                    </span>
-                                  </StyledBaseAvatar>
-                                </Tooltip>
-                              </BaseAvatar>
-                            </UserAvatar>
-                          </StyledAvatar>
-                          <StyledNameAndEmail>
-                            <div
-                              className="css-14b4oxh-StyledNameAndEmail e31z2f81"
-                            >
-                              <StyledName
-                                hideEmail={false}
+                                                <rect
+                                                  fill="#315cac"
+                                                  height="120"
+                                                  rx="15"
+                                                  ry="15"
+                                                  width="120"
+                                                  x="0"
+                                                  y="0"
+                                                />
+                                                <text
+                                                  fill="#FFFFFF"
+                                                  fontSize="65"
+                                                  style={
+                                                    Object {
+                                                      "dominantBaseline": "central",
+                                                    }
+                                                  }
+                                                  textAnchor="middle"
+                                                  x="50%"
+                                                  y="50%"
+                                                >
+                                                  FB
+                                                </text>
+                                              </svg>
+                                            </Component>
+                                          </LetterAvatar>
+                                        </ForwardRef>
+                                      </span>
+                                    </StyledBaseAvatar>
+                                  </Tooltip>
+                                </BaseAvatar>
+                              </UserAvatar>
+                            </StyledAvatar>
+                            <StyledNameAndEmail>
+                              <div
+                                className="css-14b4oxh-StyledNameAndEmail e31z2f81"
                               >
-                                <span
-                                  className="css-19h2nhd-StyledName e31z2f83"
+                                <StyledName
+                                  hideEmail={false}
                                 >
-                                  Foo Bar
-                                </span>
-                              </StyledName>
-                              <StyledEmail>
-                                <div
-                                  className="css-zdh78r-StyledEmail e31z2f82"
-                                >
-                                  foo@example.com
-                                </div>
-                              </StyledEmail>
-                            </div>
-                          </StyledNameAndEmail>
-                        </div>
-                      </StyledUserBadge>
-                    </UserBadge>
-                  </ErrorBoundary>
-                </InlineErrorBoundary>
-              </IdBadge>
-            </UserBadgeNoOverflow>
-          </a>
-        </Link>
+                                  <span
+                                    className="css-19h2nhd-StyledName e31z2f83"
+                                  >
+                                    Foo Bar
+                                  </span>
+                                </StyledName>
+                                <StyledEmail>
+                                  <div
+                                    className="css-zdh78r-StyledEmail e31z2f82"
+                                  >
+                                    foo@example.com
+                                  </div>
+                                </StyledEmail>
+                              </div>
+                            </StyledNameAndEmail>
+                          </div>
+                        </StyledUserBadge>
+                      </UserBadge>
+                    </ErrorBoundary>
+                  </InlineErrorBoundary>
+                </IdBadge>
+              </UserBadgeNoOverflow>
+            </a>
+          </Component>
+        </Anchor>
       </Link>
     </UserSummary>
     <div>
@@ -803,33 +810,32 @@ exports[`Sidebar SidebarDropdown can open Sidebar org/name dropdown menu 1`] = `
           >
             <Link
               className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-              target="_self"
               to="/settings/account/"
             >
-              <Link
+              <Anchor
                 className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-                onlyActiveOnIndex={false}
-                style={Object {}}
-                target="_self"
-                to="/settings/account/"
+                href="/settings/account/"
               >
-                <a
-                  className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-                  onClick={[Function]}
-                  style={Object {}}
-                  target="_self"
+                <Component
+                  className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                  href="/settings/account/"
                 >
-                  <MenuItemLabel
-                    hasMenu={false}
+                  <a
+                    className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                    href="/settings/account/"
                   >
-                    <span
-                      className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                    <MenuItemLabel
+                      hasMenu={false}
                     >
-                      User settings
-                    </span>
-                  </MenuItemLabel>
-                </a>
-              </Link>
+                      <span
+                        className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                      >
+                        User settings
+                      </span>
+                    </MenuItemLabel>
+                  </a>
+                </Component>
+              </Anchor>
             </Link>
           </SidebarMenuItemLink>
         </StyledSidebarMenuItemLink>
@@ -846,33 +852,32 @@ exports[`Sidebar SidebarDropdown can open Sidebar org/name dropdown menu 1`] = `
           >
             <Link
               className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-              target="_self"
               to="/settings/account/api/"
             >
-              <Link
+              <Anchor
                 className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-                onlyActiveOnIndex={false}
-                style={Object {}}
-                target="_self"
-                to="/settings/account/api/"
+                href="/settings/account/api/"
               >
-                <a
-                  className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-                  onClick={[Function]}
-                  style={Object {}}
-                  target="_self"
+                <Component
+                  className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                  href="/settings/account/api/"
                 >
-                  <MenuItemLabel
-                    hasMenu={false}
+                  <a
+                    className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                    href="/settings/account/api/"
                   >
-                    <span
-                      className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                    <MenuItemLabel
+                      hasMenu={false}
                     >
-                      API keys
-                    </span>
-                  </MenuItemLabel>
-                </a>
-              </Link>
+                      <span
+                        className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                      >
+                        API keys
+                      </span>
+                    </MenuItemLabel>
+                  </a>
+                </Component>
+              </Anchor>
             </Link>
           </SidebarMenuItemLink>
         </StyledSidebarMenuItemLink>
@@ -921,7 +926,7 @@ exports[`Sidebar SidebarHelp can toggle help menu 1`] = `
   onMouseLeave={[Function]}
 >
   <div
-    className="css-jlq0c6-HelpMenu-SidebarDropdownMenu e6tkw732"
+    className="css-jlq0c6-HelpMenu-SidebarDropdownMenu e1q2bb9t2"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -988,26 +993,26 @@ exports[`Sidebar SidebarHelp can toggle help menu 1`] = `
       </StyledSidebarMenuItemLink>
     </SidebarMenuItem>
     <SidebarMenuItem
-      href="https://forum.sentry.io/"
       openInNewTab={true}
+      to="https://forum.sentry.io/"
     >
       <StyledSidebarMenuItemLink
-        href="https://forum.sentry.io/"
         openInNewTab={true}
+        to="https://forum.sentry.io/"
       >
         <SidebarMenuItemLink
           className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-          href="https://forum.sentry.io/"
           openInNewTab={true}
+          to="https://forum.sentry.io/"
         >
-          <Link
+          <ForwardRef
             className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
             href="https://forum.sentry.io/"
-            target="_blank"
           >
             <a
               className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
               href="https://forum.sentry.io/"
+              rel="noreferrer noopener"
               target="_blank"
             >
               <MenuItemLabel
@@ -1020,31 +1025,31 @@ exports[`Sidebar SidebarHelp can toggle help menu 1`] = `
                 </span>
               </MenuItemLabel>
             </a>
-          </Link>
+          </ForwardRef>
         </SidebarMenuItemLink>
       </StyledSidebarMenuItemLink>
     </SidebarMenuItem>
     <SidebarMenuItem
-      href="https://status.sentry.io/"
       openInNewTab={true}
+      to="https://status.sentry.io/"
     >
       <StyledSidebarMenuItemLink
-        href="https://status.sentry.io/"
         openInNewTab={true}
+        to="https://status.sentry.io/"
       >
         <SidebarMenuItemLink
           className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-          href="https://status.sentry.io/"
           openInNewTab={true}
+          to="https://status.sentry.io/"
         >
-          <Link
+          <ForwardRef
             className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
             href="https://status.sentry.io/"
-            target="_blank"
           >
             <a
               className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
               href="https://status.sentry.io/"
+              rel="noreferrer noopener"
               target="_blank"
             >
               <MenuItemLabel
@@ -1057,7 +1062,7 @@ exports[`Sidebar SidebarHelp can toggle help menu 1`] = `
                 </span>
               </MenuItemLabel>
             </a>
-          </Link>
+          </ForwardRef>
         </SidebarMenuItemLink>
       </StyledSidebarMenuItemLink>
     </SidebarMenuItem>
@@ -1266,40 +1271,20 @@ exports[`Sidebar renders without org and router 1`] = `
         className="css-j625pk-UserSummary e10773n31"
         to="/settings/account/details/"
       >
-        <Link
+        <Anchor
           className="css-j625pk-UserSummary e10773n31"
-          onlyActiveOnIndex={false}
-          style={Object {}}
-          to="/settings/account/details/"
+          href="/settings/account/details/"
         >
-          <a
-            className="css-j625pk-UserSummary e10773n31"
-            onClick={[Function]}
-            style={Object {}}
+          <Component
+            className="e10773n31 css-i3fzog-Anchor-UserSummary e18jdd0v0"
+            href="/settings/account/details/"
           >
-            <UserBadgeNoOverflow
-              avatarSize={32}
-              user={
-                Object {
-                  "email": "foo@example.com",
-                  "flags": Object {
-                    "newsletter_consent_prompt": false,
-                  },
-                  "hasPasswordAuth": true,
-                  "id": "1",
-                  "isAuthenticated": true,
-                  "name": "Foo Bar",
-                  "options": Object {
-                    "timezone": "UTC",
-                  },
-                  "permissions": Set {},
-                  "username": "foo@example.com",
-                }
-              }
+            <a
+              className="e10773n31 css-i3fzog-Anchor-UserSummary e18jdd0v0"
+              href="/settings/account/details/"
             >
-              <IdBadge
+              <UserBadgeNoOverflow
                 avatarSize={32}
-                className="css-1b4dtj5-UserBadgeNoOverflow e10773n32"
                 user={
                   Object {
                     "email": "foo@example.com",
@@ -1318,63 +1303,62 @@ exports[`Sidebar renders without org and router 1`] = `
                   }
                 }
               >
-                <InlineErrorBoundary
-                  mini={true}
+                <IdBadge
+                  avatarSize={32}
+                  className="css-1b4dtj5-UserBadgeNoOverflow e10773n32"
+                  user={
+                    Object {
+                      "email": "foo@example.com",
+                      "flags": Object {
+                        "newsletter_consent_prompt": false,
+                      },
+                      "hasPasswordAuth": true,
+                      "id": "1",
+                      "isAuthenticated": true,
+                      "name": "Foo Bar",
+                      "options": Object {
+                        "timezone": "UTC",
+                      },
+                      "permissions": Set {},
+                      "username": "foo@example.com",
+                    }
+                  }
                 >
-                  <ErrorBoundary
-                    className="css-1wuy21l-InlineErrorBoundary e83vi020"
+                  <InlineErrorBoundary
                     mini={true}
                   >
-                    <UserBadge
-                      avatarSize={32}
-                      className="css-1b4dtj5-UserBadgeNoOverflow e10773n32"
-                      user={
-                        Object {
-                          "email": "foo@example.com",
-                          "flags": Object {
-                            "newsletter_consent_prompt": false,
-                          },
-                          "hasPasswordAuth": true,
-                          "id": "1",
-                          "isAuthenticated": true,
-                          "name": "Foo Bar",
-                          "options": Object {
-                            "timezone": "UTC",
-                          },
-                          "permissions": Set {},
-                          "username": "foo@example.com",
-                        }
-                      }
+                    <ErrorBoundary
+                      className="css-1wuy21l-InlineErrorBoundary e83vi020"
+                      mini={true}
                     >
-                      <StyledUserBadge
+                      <UserBadge
+                        avatarSize={32}
                         className="css-1b4dtj5-UserBadgeNoOverflow e10773n32"
+                        user={
+                          Object {
+                            "email": "foo@example.com",
+                            "flags": Object {
+                              "newsletter_consent_prompt": false,
+                            },
+                            "hasPasswordAuth": true,
+                            "id": "1",
+                            "isAuthenticated": true,
+                            "name": "Foo Bar",
+                            "options": Object {
+                              "timezone": "UTC",
+                            },
+                            "permissions": Set {},
+                            "username": "foo@example.com",
+                          }
+                        }
                       >
-                        <div
-                          className="e10773n32 css-qu415y-StyledUserBadge-UserBadgeNoOverflow e31z2f80"
+                        <StyledUserBadge
+                          className="css-1b4dtj5-UserBadgeNoOverflow e10773n32"
                         >
-                          <StyledAvatar
-                            gravatar={false}
-                            size={32}
-                            user={
-                              Object {
-                                "email": "foo@example.com",
-                                "flags": Object {
-                                  "newsletter_consent_prompt": false,
-                                },
-                                "hasPasswordAuth": true,
-                                "id": "1",
-                                "isAuthenticated": true,
-                                "name": "Foo Bar",
-                                "options": Object {
-                                  "timezone": "UTC",
-                                },
-                                "permissions": Set {},
-                                "username": "foo@example.com",
-                              }
-                            }
+                          <div
+                            className="e10773n32 css-qu415y-StyledUserBadge-UserBadgeNoOverflow e31z2f80"
                           >
-                            <UserAvatar
-                              className="css-593o0g-StyledAvatar e31z2f84"
+                            <StyledAvatar
                               gravatar={false}
                               size={32}
                               user={
@@ -1395,45 +1379,54 @@ exports[`Sidebar renders without org and router 1`] = `
                                 }
                               }
                             >
-                              <BaseAvatar
+                              <UserAvatar
                                 className="css-593o0g-StyledAvatar e31z2f84"
-                                gravatarId="foo@example.com"
-                                hasTooltip={false}
-                                letterId="foo@example.com"
-                                round={true}
+                                gravatar={false}
                                 size={32}
-                                style={Object {}}
-                                title="Foo Bar"
-                                tooltip="Foo Bar (foo@example.com)"
-                                type="letter_avatar"
-                                uploadId=""
-                                uploadPath="avatar"
+                                user={
+                                  Object {
+                                    "email": "foo@example.com",
+                                    "flags": Object {
+                                      "newsletter_consent_prompt": false,
+                                    },
+                                    "hasPasswordAuth": true,
+                                    "id": "1",
+                                    "isAuthenticated": true,
+                                    "name": "Foo Bar",
+                                    "options": Object {
+                                      "timezone": "UTC",
+                                    },
+                                    "permissions": Set {},
+                                    "username": "foo@example.com",
+                                  }
+                                }
                               >
-                                <Tooltip
-                                  containerDisplayMode="inline-block"
-                                  disabled={true}
-                                  position="top"
-                                  title="Foo Bar (foo@example.com)"
+                                <BaseAvatar
+                                  className="css-593o0g-StyledAvatar e31z2f84"
+                                  gravatarId="foo@example.com"
+                                  hasTooltip={false}
+                                  letterId="foo@example.com"
+                                  round={true}
+                                  size={32}
+                                  style={Object {}}
+                                  title="Foo Bar"
+                                  tooltip="Foo Bar (foo@example.com)"
+                                  type="letter_avatar"
+                                  uploadId=""
+                                  uploadPath="avatar"
                                 >
-                                  <StyledBaseAvatar
-                                    className="avatar css-593o0g-StyledAvatar e31z2f84"
-                                    gravatarId="foo@example.com"
-                                    letterId="foo@example.com"
-                                    loaded={true}
-                                    round={true}
-                                    style={
-                                      Object {
-                                        "height": "32px",
-                                        "width": "32px",
-                                      }
-                                    }
-                                    title="Foo Bar"
-                                    type="letter_avatar"
-                                    uploadId=""
-                                    uploadPath="avatar"
+                                  <Tooltip
+                                    containerDisplayMode="inline-block"
+                                    disabled={true}
+                                    position="top"
+                                    title="Foo Bar (foo@example.com)"
                                   >
-                                    <span
-                                      className="avatar e31z2f84 css-13sepyg-StyledBaseAvatar-StyledAvatar e147uwb0"
+                                    <StyledBaseAvatar
+                                      className="avatar css-593o0g-StyledAvatar e31z2f84"
+                                      gravatarId="foo@example.com"
+                                      letterId="foo@example.com"
+                                      loaded={true}
+                                      round={true}
                                       style={
                                         Object {
                                           "height": "32px",
@@ -1442,93 +1435,107 @@ exports[`Sidebar renders without org and router 1`] = `
                                       }
                                       title="Foo Bar"
                                       type="letter_avatar"
+                                      uploadId=""
+                                      uploadPath="avatar"
                                     >
-                                      <ForwardRef
-                                        displayName="Foo Bar"
-                                        identifier="foo@example.com"
-                                        round={true}
+                                      <span
+                                        className="avatar e31z2f84 css-13sepyg-StyledBaseAvatar-StyledAvatar e147uwb0"
+                                        style={
+                                          Object {
+                                            "height": "32px",
+                                            "width": "32px",
+                                          }
+                                        }
+                                        title="Foo Bar"
+                                        type="letter_avatar"
                                       >
-                                        <LetterAvatar
+                                        <ForwardRef
                                           displayName="Foo Bar"
-                                          forwardedRef={null}
                                           identifier="foo@example.com"
                                           round={true}
                                         >
-                                          <Component
-                                            className="css-1oxr9oh-LetterAvatar e12lgfev0"
+                                          <LetterAvatar
                                             displayName="Foo Bar"
                                             forwardedRef={null}
                                             identifier="foo@example.com"
                                             round={true}
                                           >
-                                            <svg
+                                            <Component
                                               className="css-1oxr9oh-LetterAvatar e12lgfev0"
-                                              viewBox="0 0 120 120"
+                                              displayName="Foo Bar"
+                                              forwardedRef={null}
+                                              identifier="foo@example.com"
+                                              round={true}
                                             >
-                                              <rect
-                                                fill="#315cac"
-                                                height="120"
-                                                rx="15"
-                                                ry="15"
-                                                width="120"
-                                                x="0"
-                                                y="0"
-                                              />
-                                              <text
-                                                fill="#FFFFFF"
-                                                fontSize="65"
-                                                style={
-                                                  Object {
-                                                    "dominantBaseline": "central",
-                                                  }
-                                                }
-                                                textAnchor="middle"
-                                                x="50%"
-                                                y="50%"
+                                              <svg
+                                                className="css-1oxr9oh-LetterAvatar e12lgfev0"
+                                                viewBox="0 0 120 120"
                                               >
-                                                FB
-                                              </text>
-                                            </svg>
-                                          </Component>
-                                        </LetterAvatar>
-                                      </ForwardRef>
-                                    </span>
-                                  </StyledBaseAvatar>
-                                </Tooltip>
-                              </BaseAvatar>
-                            </UserAvatar>
-                          </StyledAvatar>
-                          <StyledNameAndEmail>
-                            <div
-                              className="css-14b4oxh-StyledNameAndEmail e31z2f81"
-                            >
-                              <StyledName
-                                hideEmail={false}
+                                                <rect
+                                                  fill="#315cac"
+                                                  height="120"
+                                                  rx="15"
+                                                  ry="15"
+                                                  width="120"
+                                                  x="0"
+                                                  y="0"
+                                                />
+                                                <text
+                                                  fill="#FFFFFF"
+                                                  fontSize="65"
+                                                  style={
+                                                    Object {
+                                                      "dominantBaseline": "central",
+                                                    }
+                                                  }
+                                                  textAnchor="middle"
+                                                  x="50%"
+                                                  y="50%"
+                                                >
+                                                  FB
+                                                </text>
+                                              </svg>
+                                            </Component>
+                                          </LetterAvatar>
+                                        </ForwardRef>
+                                      </span>
+                                    </StyledBaseAvatar>
+                                  </Tooltip>
+                                </BaseAvatar>
+                              </UserAvatar>
+                            </StyledAvatar>
+                            <StyledNameAndEmail>
+                              <div
+                                className="css-14b4oxh-StyledNameAndEmail e31z2f81"
                               >
-                                <span
-                                  className="css-19h2nhd-StyledName e31z2f83"
+                                <StyledName
+                                  hideEmail={false}
                                 >
-                                  Foo Bar
-                                </span>
-                              </StyledName>
-                              <StyledEmail>
-                                <div
-                                  className="css-zdh78r-StyledEmail e31z2f82"
-                                >
-                                  foo@example.com
-                                </div>
-                              </StyledEmail>
-                            </div>
-                          </StyledNameAndEmail>
-                        </div>
-                      </StyledUserBadge>
-                    </UserBadge>
-                  </ErrorBoundary>
-                </InlineErrorBoundary>
-              </IdBadge>
-            </UserBadgeNoOverflow>
-          </a>
-        </Link>
+                                  <span
+                                    className="css-19h2nhd-StyledName e31z2f83"
+                                  >
+                                    Foo Bar
+                                  </span>
+                                </StyledName>
+                                <StyledEmail>
+                                  <div
+                                    className="css-zdh78r-StyledEmail e31z2f82"
+                                  >
+                                    foo@example.com
+                                  </div>
+                                </StyledEmail>
+                              </div>
+                            </StyledNameAndEmail>
+                          </div>
+                        </StyledUserBadge>
+                      </UserBadge>
+                    </ErrorBoundary>
+                  </InlineErrorBoundary>
+                </IdBadge>
+              </UserBadgeNoOverflow>
+            </a>
+          </Component>
+        </Anchor>
       </Link>
     </UserSummary>
     <div>
@@ -1544,33 +1551,32 @@ exports[`Sidebar renders without org and router 1`] = `
           >
             <Link
               className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-              target="_self"
               to="/settings/account/"
             >
-              <Link
+              <Anchor
                 className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-                onlyActiveOnIndex={false}
-                style={Object {}}
-                target="_self"
-                to="/settings/account/"
+                href="/settings/account/"
               >
-                <a
-                  className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-                  onClick={[Function]}
-                  style={Object {}}
-                  target="_self"
+                <Component
+                  className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                  href="/settings/account/"
                 >
-                  <MenuItemLabel
-                    hasMenu={false}
+                  <a
+                    className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                    href="/settings/account/"
                   >
-                    <span
-                      className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                    <MenuItemLabel
+                      hasMenu={false}
                     >
-                      User settings
-                    </span>
-                  </MenuItemLabel>
-                </a>
-              </Link>
+                      <span
+                        className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                      >
+                        User settings
+                      </span>
+                    </MenuItemLabel>
+                  </a>
+                </Component>
+              </Anchor>
             </Link>
           </SidebarMenuItemLink>
         </StyledSidebarMenuItemLink>
@@ -1587,33 +1593,32 @@ exports[`Sidebar renders without org and router 1`] = `
           >
             <Link
               className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-              target="_self"
               to="/settings/account/api/"
             >
-              <Link
+              <Anchor
                 className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-                onlyActiveOnIndex={false}
-                style={Object {}}
-                target="_self"
-                to="/settings/account/api/"
+                href="/settings/account/api/"
               >
-                <a
-                  className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
-                  onClick={[Function]}
-                  style={Object {}}
-                  target="_self"
+                <Component
+                  className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                  href="/settings/account/api/"
                 >
-                  <MenuItemLabel
-                    hasMenu={false}
+                  <a
+                    className="eev51g21 css-d35ye5-Anchor-StyledSidebarMenuItemLink e18jdd0v0"
+                    href="/settings/account/api/"
                   >
-                    <span
-                      className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                    <MenuItemLabel
+                      hasMenu={false}
                     >
-                      API keys
-                    </span>
-                  </MenuItemLabel>
-                </a>
-              </Link>
+                      <span
+                        className="css-1ug1il4-MenuItemLabel-MenuItemLabel eev51g20"
+                      >
+                        API keys
+                      </span>
+                    </MenuItemLabel>
+                  </a>
+                </Component>
+              </Anchor>
             </Link>
           </SidebarMenuItemLink>
         </StyledSidebarMenuItemLink>

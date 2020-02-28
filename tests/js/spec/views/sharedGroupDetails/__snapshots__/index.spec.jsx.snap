@@ -700,17 +700,15 @@ exports[`SharedGroupDetails renders 1`] = `
                         <FooterLink
                           className="hidden-xs"
                           href="https://github.com/getsentry/sentry"
-                          rel="noreferrer"
                         >
                           <ForwardRef
                             className="hidden-xs css-aovf7d-FooterLink e1xhjlxg0"
                             href="https://github.com/getsentry/sentry"
-                            rel="noreferrer"
                           >
                             <a
                               className="hidden-xs css-aovf7d-FooterLink e1xhjlxg0"
                               href="https://github.com/getsentry/sentry"
-                              rel="noreferrer"
+                              rel="noreferrer noopener"
                               target="_blank"
                             >
                               Contribute

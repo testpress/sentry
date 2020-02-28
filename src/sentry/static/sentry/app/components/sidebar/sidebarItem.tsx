@@ -10,6 +10,7 @@ import {t} from 'app/locale';
 import space from 'app/styles/space';
 import Link from 'app/components/links/link';
 import TextOverflow from 'app/components/textOverflow';
+import theme from 'app/utils/theme';
 
 import {SidebarOrientation} from './types';
 
@@ -21,8 +22,6 @@ const LabelHook = HookOrDefault({
 type Props = ReactRouter.WithRouterProps & {
   onClick?: (id: string, e: React.MouseEvent<HTMLAnchorElement>) => void;
   className?: string;
-
-  // TODO(ts): Replace with React.ComponentProps<typeof Link> when possible
   index?: boolean;
   href?: string;
   to?: string;
@@ -98,12 +97,11 @@ const SidebarItem = ({
       <StyledSidebarItem
         data-test-id={props['data-test-id']}
         active={isActive ? 'true' : undefined}
-        href={href}
-        to={to}
+        to={to ? to : href}
         className={className}
-        onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-          typeof onClick === 'function' && onClick(id, e)
-        }
+        onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+          typeof onClick === 'function' && onClick(id, event);
+        }}
       >
         <SidebarItemWrapper>
           <SidebarItemIcon>{icon}</SidebarItemIcon>
@@ -130,7 +128,7 @@ const SidebarItem = ({
 
 export default ReactRouter.withRouter(SidebarItem);
 
-const getActiveStyle = ({active, theme}) => {
+const getActiveStyle = ({active}) => {
   if (!active) {
     return '';
   }
@@ -237,7 +235,7 @@ const SidebarItemLabel = styled('span')`
   justify-content: space-between;
 `;
 
-const getCollapsedBadgeStyle = ({collapsed, theme}) => {
+const getCollapsedBadgeStyle = ({collapsed}) => {
   if (!collapsed) {
     return '';
   }

@@ -37,7 +37,7 @@ const AlertMessage = ({alert, system}: Props) => {
         onClick={handleCloseAlert}
         borderless
       />
-      {url ? <Link href={url}>{message}</Link> : message}
+      {url ? <Link to={url}>{message}</Link> : message}
     </StyledAlert>
   );
 };

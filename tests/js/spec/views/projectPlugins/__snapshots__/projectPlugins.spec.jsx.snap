@@ -250,22 +250,25 @@ exports[`ProjectPlugins renders 1`] = `
                                       key="2"
                                       to="/settings/org-slug/integrations"
                                     >
-                                      <Link
-                                        onlyActiveOnIndex={false}
-                                        style={Object {}}
-                                        to="/settings/org-slug/integrations"
+                                      <Anchor
+                                        href="/settings/org-slug/integrations"
                                       >
-                                        <a
-                                          onClick={[Function]}
-                                          style={Object {}}
+                                        <Component
+                                          className="css-34e2lm-Anchor e18jdd0v0"
+                                          href="/settings/org-slug/integrations"
                                         >
-                                          <span
-                                            key="1"
+                                          <a
+                                            className="css-34e2lm-Anchor e18jdd0v0"
+                                            href="/settings/org-slug/integrations"
                                           >
-                                            organization integrations
-                                          </span>
-                                        </a>
-                                      </Link>
+                                            <span
+                                              key="1"
+                                            >
+                                              organization integrations
+                                            </span>
+                                          </a>
+                                        </Component>
+                                      </Anchor>
                                     </Link>
                                     <span
                                       key="3"

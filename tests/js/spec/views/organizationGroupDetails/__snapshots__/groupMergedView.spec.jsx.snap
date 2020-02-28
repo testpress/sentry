@@ -309,17 +309,40 @@ exports[`Issues -> Merged View renders with mocked data 1`] = `
                             priority="primary"
                             stopPropagation={false}
                           >
-                            <a
+                            <Link
                               className="btn btn-sm btn-default disabled"
                               disabled={true}
                               onClick={[Function]}
                               title="Unmerging 0 events"
                             >
-                              Unmerge
-                               (
-                              0
-                              )
-                            </a>
+                              <Anchor
+                                className="btn btn-sm btn-default disabled"
+                                disabled={true}
+                                href="#"
+                                onClick={[Function]}
+                                title="Unmerging 0 events"
+                              >
+                                <Component
+                                  className="btn btn-sm btn-default disabled css-a8huvi-Anchor e18jdd0v0"
+                                  disabled={true}
+                                  href="#"
+                                  onClick={[Function]}
+                                  title="Unmerging 0 events"
+                                >
+                                  <a
+                                    className="btn btn-sm btn-default disabled css-a8huvi-Anchor e18jdd0v0"
+                                    href="#"
+                                    onClick={[Function]}
+                                    title="Unmerging 0 events"
+                                  >
+                                    Unmerge
+                                     (
+                                    0
+                                    )
+                                  </a>
+                                </Component>
+                              </Anchor>
+                            </Link>
                             <Modal
                               animation={false}
                               autoFocus={true}

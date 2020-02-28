@@ -76,7 +76,7 @@ class AcceptOrganizationInvite extends AsyncView<Props, State> {
           'Your account ([email]) is already a member of this organization. [switchLink:Switch accounts]?',
           {
             email: user.email,
-            switchLink: <Link href="#" onClick={this.handleLogout} />,
+            switchLink: <Link onClick={this.handleLogout} />,
           }
         )}
       </Alert>
@@ -126,7 +126,7 @@ class AcceptOrganizationInvite extends AsyncView<Props, State> {
               {t('Create a new account')}
             </Button>
           )}
-          <Link href={this.makeNextUrl('/auth/login/')}>
+          <Link to={this.makeNextUrl('/auth/login/')}>
             {t('Login using an existing account')}
           </Link>
         </Actions>

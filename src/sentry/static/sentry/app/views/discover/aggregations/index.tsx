@@ -58,9 +58,9 @@ export default class Aggregations extends React.Component<AggregationsProps> {
               disabled={disabled}
             />
             <div>
-              <a onClick={() => this.removeRow(idx)}>
+              <Link onClick={() => this.removeRow(idx)}>
                 <InlineSvg src="icon-circle-close" height="38px" />
-              </a>
+              </Link>
             </div>
           </SelectListItem>
         ))}

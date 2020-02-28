@@ -38,10 +38,10 @@ const SidebarHelp = ({orientation, collapsed, hidePanel, organization}: Props) =
             <SidebarMenuItem onClick={openHelpSearchModal}>
               {t('Search Docs and FAQs')}
             </SidebarMenuItem>
-            <SidebarMenuItem href="https://forum.sentry.io/" openInNewTab>
+            <SidebarMenuItem to="https://forum.sentry.io/" openInNewTab>
               {t('Community Discussions')}
             </SidebarMenuItem>
-            <SidebarMenuItem href="https://status.sentry.io/" openInNewTab>
+            <SidebarMenuItem to="https://status.sentry.io/" openInNewTab>
               {t('Service Status')}
             </SidebarMenuItem>
           </HelpMenu>

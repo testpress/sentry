@@ -309,15 +309,8 @@ exports[`OrganizationProjects should render the projects in the store 1`] = `
                                 Array [
                                   "/organizations/org-slug/projects/new/",
                                 ],
-                                Array [
-                                  "/settings/org-slug/projects/project-slug/",
-                                ],
                               ],
                               "results": Array [
-                                Object {
-                                  "type": "return",
-                                  "value": undefined,
-                                },
                                 Object {
                                   "type": "return",
                                   "value": undefined,
@@ -621,41 +614,44 @@ exports[`OrganizationProjects should render the projects in the store 1`] = `
                                       <Link
                                         to="/settings/org-slug/projects/project-slug/"
                                       >
-                                        <Link
-                                          onlyActiveOnIndex={false}
-                                          style={Object {}}
-                                          to="/settings/org-slug/projects/project-slug/"
+                                        <Anchor
+                                          href="/settings/org-slug/projects/project-slug/"
                                         >
-                                          <a
-                                            onClick={[Function]}
-                                            style={Object {}}
+                                          <Component
+                                            className="css-34e2lm-Anchor e18jdd0v0"
+                                            href="/settings/org-slug/projects/project-slug/"
                                           >
-                                            <ProjectLabel
-                                              project={
-                                                Object {
-                                                  "environments": Array [],
-                                                  "hasAccess": true,
-                                                  "id": "2",
-                                                  "isBookmarked": false,
-                                                  "isMember": true,
-                                                  "name": "Project Name",
-                                                  "slug": "project-slug",
-                                                  "teams": Array [],
-                                                }
-                                              }
+                                            <a
+                                              className="css-34e2lm-Anchor e18jdd0v0"
+                                              href="/settings/org-slug/projects/project-slug/"
                                             >
-                                              <span
-                                                className="project-label"
+                                              <ProjectLabel
+                                                project={
+                                                  Object {
+                                                    "environments": Array [],
+                                                    "hasAccess": true,
+                                                    "id": "2",
+                                                    "isBookmarked": false,
+                                                    "isMember": true,
+                                                    "name": "Project Name",
+                                                    "slug": "project-slug",
+                                                    "teams": Array [],
+                                                  }
+                                                }
                                               >
                                                 <span
-                                                  className="project-name"
+                                                  className="project-label"
                                                 >
-                                                  project-slug
+                                                  <span
+                                                    className="project-name"
+                                                  >
+                                                    project-slug
+                                                  </span>
                                                 </span>
-                                              </span>
-                                            </ProjectLabel>
-                                          </a>
-                                        </Link>
+                                              </ProjectLabel>
+                                            </a>
+                                          </Component>
+                                        </Anchor>
                                       </Link>
                                     </div>
                                   </Container>

@@ -42,7 +42,7 @@ class DiscoverBreadcrumb extends React.Component<Props> {
       : null;
 
     crumbs.push(
-      <BreadcrumbItem to={discoverTarget} key="eventview-home">
+      <BreadcrumbItem to={discoverTarget || undefined} key="eventview-home">
         {t('Discover')}
       </BreadcrumbItem>
     );

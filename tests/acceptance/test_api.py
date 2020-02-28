@@ -42,8 +42,6 @@ class ApiApplicationTest(AcceptanceTestCase):
 
         self.browser.click('[href="/settings/account/api/applications/"]')
         self.browser.wait_until_not(".loading")
-        self.browser.click_when_visible('[data-test-id="toast-success"]')
-        self.browser.wait_until_not('[data-test-id="toast-success"]')
         self.browser.snapshot("api applications - single application")
 
         self.browser.get(self.path)
