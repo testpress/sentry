@@ -12,6 +12,7 @@ import OrganizationStore from 'app/stores/organizationStore';
 import OrganizationsStore from 'app/stores/organizationsStore';
 import Projects from 'app/utils/projects';
 import SelectControl from 'app/components/forms/selectControl';
+import IdBadge from 'app/components/idBadge';
 import replaceRouterParams from 'app/utils/replaceRouterParams';
 import space from 'app/styles/space';
 import theme from 'app/utils/theme';
@@ -198,6 +199,23 @@ class ContextPickerModal extends React.Component<Props> {
     return '';
   }
 
+  customOptionProject = ({value, label, innerProps}) => {
+    const project = this.props.projects.find(({slug}) => value === slug);
+    if (!project) {
+      return null;
+    }
+    return (
+      <BadgeWrapper {...innerProps}>
+        <IdBadge
+          project={project}
+          avatarSize={16}
+          displayName={label}
+          avatarProps={{consistentWidth: true}}
+        />
+      </BadgeWrapper>
+    );
+  };
+
   render() {
     const {
       needOrg,
@@ -269,6 +287,7 @@ class ContextPickerModal extends React.Component<Props> {
               styles={customStyles}
               options={projects.map(({slug}) => ({label: slug, value: slug}))}
               onChange={this.handleSelectProject}
+              components={{Option: this.customOptionProject}}
             />
           )}
         </Body>
@@ -336,3 +355,18 @@ const StyledSelectControl = styled(SelectControl)`
 const StyledLoadingIndicator = styled(LoadingIndicator)`
   z-index: 1;
 `;
+
+const BadgeWrapper = styled('div')`
+  height: 34px;
+  display: flex;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  background: ${(p: {isFocused: boolean}) => (p.isFocused ? '#faf5ff' : '#FFFFFF')};
+  box-shadow: inset 0px -1px 0px #e7e1ec;
+  font-family: Rubik;
+  font-size: 16px;
+  color: #4a3e56;
+`;
+
+// border-top: 1px solid ${p => p.theme.gray1};
