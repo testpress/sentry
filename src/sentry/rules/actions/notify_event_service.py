@@ -94,11 +94,19 @@ class NotifyEventServiceAction(EventAction):
 
     def get_plugins(self):
         from sentry.plugins.bases.notify import NotificationPlugin
+        from sentry.plugins.sentry_mail.models import MailPlugin
+        from sentry import features
 
         results = []
         for plugin in plugins.for_project(self.project, version=1):
             if not isinstance(plugin, NotificationPlugin):
                 continue
+
+            if features.has(
+                "organizations:issue-alerts-targeting", self.project.organization
+            ) and isinstance(plugin, MailPlugin):
+                continue
+
             results.append(PluginService(plugin))
 
         for plugin in plugins.for_project(self.project, version=2):
