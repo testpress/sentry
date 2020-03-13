@@ -63,7 +63,7 @@ class RuleNodeList extends React.Component<Props> {
           .filter(({enabled}) => enabled)
           .map(node => ({
             value: node.id,
-            label: node.label,
+            label: node.prompt,
           }))
       : [];
 

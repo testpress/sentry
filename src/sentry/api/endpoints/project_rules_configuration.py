@@ -20,7 +20,12 @@ class ProjectRulesConfigurationEndpoint(ProjectEndpoint):
         # TODO: conditions need to be based on actions
         for rule_type, rule_cls in rules:
             node = rule_cls(project)
-            context = {"id": node.id, "label": node.label, "enabled": node.is_enabled()}
+            context = {
+                "id": node.id,
+                "label": node.label,
+                "prompt": node.prompt if hasattr(node, "prompt") else "",
+                "enabled": node.is_enabled(),
+            }
 
             if hasattr(node, "form_fields"):
                 context["formFields"] = node.form_fields
