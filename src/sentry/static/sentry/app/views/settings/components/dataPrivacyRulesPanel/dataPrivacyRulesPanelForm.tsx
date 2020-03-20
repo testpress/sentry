@@ -15,6 +15,7 @@ import {
   getRuleTypeSelectorFieldLabel,
   getMethodTypeSelectorFieldLabel,
 } from './utils';
+import DataPrivacyRulesPanelSelectorField from './dataPrivacyRulesPanelSelectorField';
 
 type Rule = {
   id: number;
@@ -121,19 +122,14 @@ class DataPrivacyRulesForm extends React.PureComponent<Props, State> {
             required
           />
           <From disabled={disabled}>{t('from')}</From>
-          <StyledTextField
-            name="from"
-            placeholder={t('ex. strings, numbers, custom')}
+          <DataPrivacyRulesPanelSelectorField
+            value={from}
+            error={errors.from}
+            disabled={disabled}
+            onBlur={this.handleValidation('from')}
             onChange={(value: string) => {
               this.handleChange('from', value);
             }}
-            value={from}
-            inputStyle={{
-              height: '100%',
-            }}
-            onBlur={this.handleValidation('from')}
-            error={errors.from}
-            disabled={disabled}
           />
           {type === RULE_TYPE.PATTERN && (
             <CustomRegularExpression
