@@ -55,9 +55,7 @@ class Link extends React.Component<Props> {
 
 export default Link;
 
-const Anchor = styled(({href, ...props}: Omit<Props, 'to'> & {href: string}) => (
-  <a href={href} {...omit(props, 'disabled')} />
-))`
+const Anchor = styled('a', {shouldForwardProp: prop => isPropValid(prop) && prop !== 'disabled'})<{disabled?: boolean}>`
   ${p =>
     p.disabled &&
     `
