@@ -64,7 +64,7 @@ const Pagination = (props: Props) => {
   return (
     <Paginator>
       <StyledIconLink
-        to={links.oldest || undefined}
+        to={links.oldest || '#'}
         disabled={links.previous === null || links.oldest === null}
       >
         <InlineSvg src="icon-prev" />
@@ -84,7 +84,7 @@ const Pagination = (props: Props) => {
         {t('Newer')}
       </StyledTextLink>
       <StyledIconLink
-        to={links.latest || undefined}
+        to={links.latest || '#'}
         disabled={links.next === null || links.latest === null}
         isLast
       >

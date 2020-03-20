@@ -42,7 +42,15 @@ export default class Aggregations extends React.Component<AggregationsProps> {
           <SidebarLabel>{t('Aggregation')}</SidebarLabel>
           {!disabled && (
             <AddText>
-              (<Link onClick={() => this.addRow()}>{t('Add')}</Link>)
+              (
+              <Link
+                to="#"
+                data-test-id="aggregation-add-text-link"
+                onClick={() => this.addRow()}
+              >
+                {t('Add')}
+              </Link>
+              )
             </AddText>
           )}
         </div>
@@ -58,7 +66,7 @@ export default class Aggregations extends React.Component<AggregationsProps> {
               disabled={disabled}
             />
             <div>
-              <Link onClick={() => this.removeRow(idx)}>
+              <Link to="#" onClick={() => this.removeRow(idx)}>
                 <InlineSvg src="icon-circle-close" height="38px" />
               </Link>
             </div>

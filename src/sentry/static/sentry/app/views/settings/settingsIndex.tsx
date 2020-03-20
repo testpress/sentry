@@ -350,10 +350,13 @@ const SupportLinkComponent = <T extends boolean>({
   isOnPremise,
   href,
   to,
+  ref,
   ...props
 }: SupportLinkProps<T>) => {
   if (isOnPremise) {
-    return <ExternalHomeLink isCentered={isCentered} href={href} {...props} />;
+    return (
+      <ExternalHomeLink isCentered={isCentered} href={href} ref={ref as any} {...props} />
+    );
   }
   return <HomeLink to={to} {...props} />;
 };

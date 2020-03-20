@@ -1,18 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+type AnchorProps = React.HTMLProps<HTMLAnchorElement>;
 
 type Props = {
-  // Link URL
-  href: string;
-  // Link content (accepted via string or components / DOM nodes)
-  children?: React.ReactNode;
-  // Styles applied to the component's root
   className?: string;
-  // Action to perform when clicked (will cause the component to be rendered as a button instead of an anchor)
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
-};
+  openInNewTab?: boolean;
+} & Omit<AnchorProps, 'target'>;
 
-const ExternalLink = React.forwardRef<HTMLAnchorElement, Props>((props, ref) => (
-  <a ref={ref} target="_blank" rel="noreferrer noopener" {...props} />
-));
+const ExternalLink = React.forwardRef<HTMLAnchorElement, Props>(
+  ({openInNewTab = true, ...props}, ref) => (
+    <a
+      ref={ref}
+      target={openInNewTab ? '_blank' : '_self'}
+      rel="noreferrer noopener"
+      {...props}
+    />
+  )
+);
+
+ExternalLink.propTypes = {
+  openInNewTab: PropTypes.bool,
+};
 
 export default ExternalLink;

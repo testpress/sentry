@@ -11,9 +11,9 @@ type Props = {
    */
   to?: string;
   /**
-   * specifies whether to open the linked document in a new tab
+   * Use this prop if button is an external link
    */
-  openInNewTab?: boolean;
+  href?: string;
   /**
    * It is raised when the user clicks on the element - optional
    */
@@ -24,14 +24,13 @@ type Props = {
   style?: React.CSSProperties;
 };
 
-const SidebarMenuItemLink = ({to, openInNewTab, ...props}: Props) => {
+const SidebarMenuItemLink = ({to, href, ...props}: Props) => {
+  if (href) {
+    return <ExternalLink href={href} {...props} />;
+  }
+
   if (to) {
-    return openInNewTab ? (
-      // target is not passed here, as ExternalLink by default opens the link in a new tab
-      <ExternalLink href={to} {...props} />
-    ) : (
-      <Link to={to} {...props} />
-    );
+    return <Link to={to} {...props} />;
   }
 
   return <div tabIndex={0} {...props} />;

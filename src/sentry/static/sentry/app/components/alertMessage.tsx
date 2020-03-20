@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import space from 'app/styles/space';
-import Link from 'app/components/links/link';
+import ExternalLink from 'app/components/links/externalLink';
 import Alert from 'app/components/alert';
 import AlertActions from 'app/actions/alertActions';
 import Button from 'app/components/button';
@@ -37,7 +37,7 @@ const AlertMessage = ({alert, system}: Props) => {
         onClick={handleCloseAlert}
         borderless
       />
-      {url ? <Link to={url}>{message}</Link> : message}
+      {url ? <ExternalLink href={url}>{message}</ExternalLink> : message}
     </StyledAlert>
   );
 };

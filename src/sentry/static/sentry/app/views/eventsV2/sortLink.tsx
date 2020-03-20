@@ -63,8 +63,8 @@ type LinkProps = React.ComponentProps<typeof Link>;
 type StyledLinkProps = LinkProps & {align: Alignments};
 
 const StyledLink = styled((props: StyledLinkProps) => {
-  const forwardProps = omit(props, ['align']);
-  return <Link {...forwardProps} />;
+  const {ref, ...forwardProps} = omit(props, ['align']);
+  return <Link ref={ref as any} {...forwardProps} />;
 })`
   display: block;
   width: 100%;

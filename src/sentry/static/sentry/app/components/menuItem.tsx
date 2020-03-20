@@ -13,10 +13,9 @@ type MenuItemProps = {
   eventKey?: any;
   isActive?: boolean;
   noAnchor?: boolean;
-  to?: Link['props']['to'];
   className?: string;
   onClick?: (evt: React.MouseEvent) => void;
-};
+} & Partial<Pick<Link['props'], 'to'>>;
 
 type Props = MenuItemProps & Omit<React.HTMLProps<HTMLLIElement>, keyof MenuItemProps>;
 

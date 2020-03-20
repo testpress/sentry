@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import omit from 'lodash/omit';
 
 import Link from 'app/components/links/link';
 import {PanelItem} from 'app/components/panels';
@@ -136,8 +137,8 @@ const PublishStatus = styled(({status, ...props}: PublishStatusProps) => (
 `;
 
 const CategoryTag = styled(
-  ({priority, category, ...p}: {category: string; priority: boolean; theme?: any}) => (
-    <div {...p}>{category}</div>
+  ({category, ...p}: {category: string; priority: boolean; theme?: any}) => (
+    <div {...omit(p, 'priority')}>{category}</div>
   )
 )`
   display: flex;

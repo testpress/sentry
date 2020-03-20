@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import {components} from 'react-select';
 import cloneDeep from 'lodash/cloneDeep';
+import omit from 'lodash/omit';
 
 import Badge from 'app/components/badge';
 import SelectControl from 'app/components/forms/selectControl';
@@ -407,10 +408,9 @@ class BufferedInput extends React.Component<InputProps, InputState> {
   };
 
   render() {
-    const {onUpdate, ...props} = this.props;
     return (
       <StyledInput
-        {...props}
+        {...omit(this.props, 'onUpdate')}
         ref={this.input}
         className="form-control"
         value={this.state.value}

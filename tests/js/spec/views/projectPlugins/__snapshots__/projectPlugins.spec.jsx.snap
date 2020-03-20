@@ -250,25 +250,22 @@ exports[`ProjectPlugins renders 1`] = `
                                       key="2"
                                       to="/settings/org-slug/integrations"
                                     >
-                                      <Anchor
-                                        href="/settings/org-slug/integrations"
+                                      <Link
+                                        onlyActiveOnIndex={false}
+                                        style={Object {}}
+                                        to="/settings/org-slug/integrations"
                                       >
-                                        <Component
-                                          className="css-34e2lm-Anchor e18jdd0v0"
-                                          href="/settings/org-slug/integrations"
+                                        <a
+                                          onClick={[Function]}
+                                          style={Object {}}
                                         >
-                                          <a
-                                            className="css-34e2lm-Anchor e18jdd0v0"
-                                            href="/settings/org-slug/integrations"
+                                          <span
+                                            key="1"
                                           >
-                                            <span
-                                              key="1"
-                                            >
-                                              organization integrations
-                                            </span>
-                                          </a>
-                                        </Component>
-                                      </Anchor>
+                                            organization integrations
+                                          </span>
+                                        </a>
+                                      </Link>
                                     </Link>
                                     <span
                                       key="3"
@@ -579,6 +576,9 @@ exports[`ProjectPlugins renders 1`] = `
                                               __EMOTION_TYPE_PLEASE_DO_NOT_USE__={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
+                                                  "propTypes": Object {
+                                                    "openInNewTab": [Function],
+                                                  },
                                                   "render": [Function],
                                                 }
                                               }
@@ -988,6 +988,9 @@ exports[`ProjectPlugins renders 1`] = `
                                               __EMOTION_TYPE_PLEASE_DO_NOT_USE__={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
+                                                  "propTypes": Object {
+                                                    "openInNewTab": [Function],
+                                                  },
                                                   "render": [Function],
                                                 }
                                               }

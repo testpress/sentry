@@ -173,7 +173,7 @@ export default class DetailsBody extends React.Component<Props> {
           <ActivityPageContent>
             <StyledNavTabs underlined>
               <li className="active">
-                <Link>{t('Activity')}</Link>
+                <Link to="#">{t('Activity')}</Link>
               </li>
 
               <SeenByTab>

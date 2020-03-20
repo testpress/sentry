@@ -10,8 +10,6 @@ import space from 'app/styles/space';
 type Size = 'small' | 'normal';
 type Priority = 'info' | 'warning' | 'success' | 'error' | 'muted';
 
-type LinkProps = React.ComponentProps<typeof Link>;
-
 type OtherProps = {
   icon?: string;
   onClick?: (e: React.MouseEvent) => void;
@@ -22,12 +20,14 @@ type DefaultProps = {
   priority: Priority;
   withoutMarginBottom: boolean;
   openInNewTab: boolean;
-  to: string;
+  href?: string;
 };
 
-type Props = OtherProps & DefaultProps;
+type Props = OtherProps & DefaultProps & Partial<Pick<Link['props'], 'to'>>;
 
-type StyledLinkProps = Omit<LinkProps, 'to'> & DefaultProps & Pick<DefaultProps, 'to'>;
+type StyledLinkProps = DefaultProps &
+  Partial<Pick<Link['props'], 'to'>> &
+  Omit<Link['props'], 'to' | 'size'>;
 
 class AlertLink extends React.Component<Props> {
   static defaultProps: DefaultProps = {
@@ -35,7 +35,6 @@ class AlertLink extends React.Component<Props> {
     size: 'normal',
     withoutMarginBottom: false,
     openInNewTab: false,
-    to: '#',
   };
 
   render() {
@@ -48,10 +47,12 @@ class AlertLink extends React.Component<Props> {
       withoutMarginBottom,
       openInNewTab,
       to,
+      href,
     } = this.props;
     return (
       <StyledLink
         to={to}
+        href={href}
         onClick={onClick}
         size={size}
         priority={priority}
@@ -68,13 +69,20 @@ class AlertLink extends React.Component<Props> {
 
 export default AlertLink;
 
-const StyledLink = styled(({openInNewTab, to, ...props}: StyledLinkProps) => {
-  const lintProps = omit(props, ['withoutMarginBottom', 'priority', 'size']);
-  return openInNewTab ? (
-    <ExternalLink {...lintProps} href={to} />
-  ) : (
-    <Link {...lintProps} to={to} />
-  );
+const StyledLink = styled(({openInNewTab, to, href, ref, ...props}: StyledLinkProps) => {
+  const linkProps = omit(props, ['withoutMarginBottom', 'priority', 'size']);
+  if (href) {
+    return (
+      <ExternalLink
+        {...linkProps}
+        href={href}
+        ref={ref as React.RefObject<HTMLAnchorElement>}
+        openInNewTab={openInNewTab}
+      />
+    );
+  }
+
+  return <Link {...linkProps} ref={ref as any} to={to || '#'} />;
 })`
   display: flex;
   align-items: center;

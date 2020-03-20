@@ -4,24 +4,18 @@ import {Link as RouterLink} from 'react-router';
 import {Location, LocationDescriptor} from 'history';
 import * as Sentry from '@sentry/browser';
 import styled from '@emotion/styled';
-import omit from 'lodash/omit';
+import isPropValid from '@emotion/is-prop-valid';
+
+type AnchorProps = React.HTMLProps<HTMLAnchorElement>;
 
 type ToLocationFunction = (location: Location) => LocationDescriptor;
 
 type Props = {
-  // Link content (accepted via string or components / DOM nodes)
-  children?: React.ReactNode;
-  // Optional URL
-  to?: string | ToLocationFunction | LocationDescriptor;
-  // Action to perform when clicked
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void | Promise<void>;
+  //URL
+  to: string | ToLocationFunction | LocationDescriptor;
   // Styles applied to the component's root
   className?: string;
-  // Specifies extra information about the element
-  title?: string;
-  disabled?: boolean;
-  tabIndex?: number;
-};
+} & Omit<AnchorProps, 'href' | 'target'>;
 
 /**
  * A context-aware version of Link (from react-router) that falls
@@ -33,9 +27,8 @@ class Link extends React.Component<Props> {
   };
 
   componentDidMount() {
-    const {to} = this.props;
     const isRouterPresent = this.context.location;
-    if (typeof to !== 'string' && !isRouterPresent) {
+    if (!isRouterPresent) {
       Sentry.captureException(
         new Error('The link component was rendered without being wrapped by a <Router />')
       );
@@ -43,19 +36,26 @@ class Link extends React.Component<Props> {
   }
 
   render() {
-    const {to = '#', ...props} = this.props;
+    const {to, ref, ...props} = this.props;
+    const isRouterPresent = this.context.location;
 
-    if (typeof to !== 'string') {
-      return <RouterLink to={to} {...props} />;
+    if (isRouterPresent) {
+      return <RouterLink to={to} ref={ref as any} {...props} />;
     }
 
-    return <Anchor href={to} {...props} />;
+    if (to === 'string') {
+      return <Anchor href={to} ref={ref} {...props} />;
+    }
+
+    return <Anchor href="#" ref={ref} {...props} disabled />;
   }
 }
 
 export default Link;
 
-const Anchor = styled('a', {shouldForwardProp: prop => isPropValid(prop) && prop !== 'disabled'})<{disabled?: boolean}>`
+const Anchor = styled('a', {
+  shouldForwardProp: prop => isPropValid(prop) && prop !== 'disabled',
+})<{disabled?: boolean}>`
   ${p =>
     p.disabled &&
     `

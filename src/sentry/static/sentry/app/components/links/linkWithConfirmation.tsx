@@ -4,8 +4,6 @@ import classNames from 'classnames';
 import Button from 'app/components/button';
 import Confirm from 'app/components/confirm';
 
-import Link from './link';
-
 type Props = {
   message: React.ReactNode;
   title: string;
@@ -23,13 +21,9 @@ class LinkWithConfirmation extends React.PureComponent<Props> {
     const {className, disabled, title, children, ...otherProps} = this.props;
     return (
       <Confirm {...otherProps} disabled={disabled}>
-        <Link
-          className={classNames(className || '', {disabled})}
-          disabled={disabled}
-          title={title}
-        >
+        <a href="#" className={classNames(className || '', {disabled})} title={title}>
           {children}
-        </Link>
+        </a>
       </Confirm>
     );
   }

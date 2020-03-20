@@ -265,25 +265,22 @@ exports[`OrganizationApiKeysList renders 1`] = `
           key="2"
           to="/settings/account/api/auth-tokens/"
         >
-          <Anchor
-            href="/settings/account/api/auth-tokens/"
+          <Link
+            onlyActiveOnIndex={false}
+            style={Object {}}
+            to="/settings/account/api/auth-tokens/"
           >
-            <Component
-              className="css-34e2lm-Anchor e18jdd0v0"
-              href="/settings/account/api/auth-tokens/"
+            <a
+              onClick={[Function]}
+              style={Object {}}
             >
-              <a
-                className="css-34e2lm-Anchor e18jdd0v0"
-                href="/settings/account/api/auth-tokens/"
+              <span
+                key="1"
               >
-                <span
-                  key="1"
-                >
-                  Auth Tokens
-                </span>
-              </a>
-            </Component>
-          </Anchor>
+                Auth Tokens
+              </span>
+            </a>
+          </Link>
         </Link>
         <span
           key="3"
@@ -383,21 +380,18 @@ exports[`OrganizationApiKeysList renders 1`] = `
                             <Link
                               to="/organizations/org-slug/api-keys/1/"
                             >
-                              <Anchor
-                                href="/organizations/org-slug/api-keys/1/"
+                              <Link
+                                onlyActiveOnIndex={false}
+                                style={Object {}}
+                                to="/organizations/org-slug/api-keys/1/"
                               >
-                                <Component
-                                  className="css-34e2lm-Anchor e18jdd0v0"
-                                  href="/organizations/org-slug/api-keys/1/"
+                                <a
+                                  onClick={[Function]}
+                                  style={Object {}}
                                 >
-                                  <a
-                                    className="css-34e2lm-Anchor e18jdd0v0"
-                                    href="/organizations/org-slug/api-keys/1/"
-                                  >
-                                    Default
-                                  </a>
-                                </Component>
-                              </Anchor>
+                                  Default
+                                </a>
+                              </Link>
                             </Link>
                           </div>
                         </Styled(div)>
@@ -446,36 +440,16 @@ exports[`OrganizationApiKeysList renders 1`] = `
                             priority="primary"
                             stopPropagation={false}
                           >
-                            <Link
+                            <a
                               className="btn btn-default btn-sm"
+                              href="#"
                               onClick={[Function]}
                               title="Remove API Key?"
                             >
-                              <Anchor
-                                className="btn btn-default btn-sm"
-                                href="#"
-                                onClick={[Function]}
-                                title="Remove API Key?"
-                              >
-                                <Component
-                                  className="btn btn-default btn-sm css-34e2lm-Anchor e18jdd0v0"
-                                  href="#"
-                                  onClick={[Function]}
-                                  title="Remove API Key?"
-                                >
-                                  <a
-                                    className="btn btn-default btn-sm css-34e2lm-Anchor e18jdd0v0"
-                                    href="#"
-                                    onClick={[Function]}
-                                    title="Remove API Key?"
-                                  >
-                                    <span
-                                      className="icon-trash"
-                                    />
-                                  </a>
-                                </Component>
-                              </Anchor>
-                            </Link>
+                              <span
+                                className="icon-trash"
+                              />
+                            </a>
                             <Modal
                               animation={false}
                               autoFocus={true}

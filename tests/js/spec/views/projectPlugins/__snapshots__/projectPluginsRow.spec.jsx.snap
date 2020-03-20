@@ -239,6 +239,9 @@ exports[`ProjectPluginRow renders 1`] = `
                             __EMOTION_TYPE_PLEASE_DO_NOT_USE__={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
+                                "propTypes": Object {
+                                  "openInNewTab": [Function],
+                                },
                                 "render": [Function],
                               }
                             }

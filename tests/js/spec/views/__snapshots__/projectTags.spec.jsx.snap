@@ -167,7 +167,7 @@ exports[`ProjectTags renders 1`] = `
               key="0"
             >
               Each event in Sentry may be annotated with various tags (key and value pairs).
-                 Learn how to
+                 Learn how to 
             </span>
             <ForwardRef
               href="https://docs.sentry.io/hosted/learn/context/"
@@ -360,53 +360,55 @@ exports[`ProjectTags renders 1`] = `
                                       priority="primary"
                                       stopPropagation={false}
                                     >
-                                      <Link
+                                      <a
                                         className=""
                                         disabled={false}
+                                        href="#"
                                         onClick={[Function]}
                                         title="Remove tag?"
                                       >
-                                        <Anchor
-                                          className=""
+                                        <forwardRef<Button>
+                                          data-test-id="delete"
                                           disabled={false}
-                                          href="#"
-                                          onClick={[Function]}
-                                          title="Remove tag?"
+                                          icon="icon-trash"
+                                          size="xsmall"
                                         >
-                                          <Component
-                                            className=" css-34e2lm-Anchor e18jdd0v0"
+                                          <Button
+                                            align="center"
+                                            data-test-id="delete"
                                             disabled={false}
-                                            href="#"
-                                            onClick={[Function]}
-                                            title="Remove tag?"
+                                            forwardRef={null}
+                                            icon="icon-trash"
+                                            size="xsmall"
                                           >
-                                            <a
-                                              className=" css-34e2lm-Anchor e18jdd0v0"
-                                              href="#"
+                                            <StyledButton
+                                              aria-disabled={false}
+                                              data-test-id="delete"
+                                              disabled={false}
+                                              forwardRef={null}
                                               onClick={[Function]}
-                                              title="Remove tag?"
+                                              role="button"
+                                              size="xsmall"
                                             >
-                                              <forwardRef<Button>
+                                              <Component
+                                                aria-disabled={false}
+                                                className="css-12ogwys-StyledButton edwq9my0"
                                                 data-test-id="delete"
-                                                disabled={false}
-                                                icon="icon-trash"
+                                                forwardRef={null}
+                                                onClick={[Function]}
+                                                role="button"
                                                 size="xsmall"
                                               >
-                                                <Button
-                                                  align="center"
+                                                <button
+                                                  aria-disabled={false}
+                                                  className="css-12ogwys-StyledButton edwq9my0"
                                                   data-test-id="delete"
-                                                  disabled={false}
-                                                  forwardRef={null}
-                                                  icon="icon-trash"
+                                                  onClick={[Function]}
+                                                  role="button"
                                                   size="xsmall"
                                                 >
-                                                  <StyledButton
-                                                    aria-disabled={false}
-                                                    data-test-id="delete"
-                                                    disabled={false}
-                                                    forwardRef={null}
-                                                    onClick={[Function]}
-                                                    role="button"
+                                                  <ButtonLabel
+                                                    align="center"
                                                     size="xsmall"
                                                   >
                                                     <span
@@ -553,53 +555,55 @@ exports[`ProjectTags renders 1`] = `
                                       priority="primary"
                                       stopPropagation={false}
                                     >
-                                      <Link
+                                      <a
                                         className=""
                                         disabled={false}
+                                        href="#"
                                         onClick={[Function]}
                                         title="Remove tag?"
                                       >
-                                        <Anchor
-                                          className=""
+                                        <forwardRef<Button>
+                                          data-test-id="delete"
                                           disabled={false}
-                                          href="#"
-                                          onClick={[Function]}
-                                          title="Remove tag?"
+                                          icon="icon-trash"
+                                          size="xsmall"
                                         >
-                                          <Component
-                                            className=" css-34e2lm-Anchor e18jdd0v0"
+                                          <Button
+                                            align="center"
+                                            data-test-id="delete"
                                             disabled={false}
-                                            href="#"
-                                            onClick={[Function]}
-                                            title="Remove tag?"
+                                            forwardRef={null}
+                                            icon="icon-trash"
+                                            size="xsmall"
                                           >
-                                            <a
-                                              className=" css-34e2lm-Anchor e18jdd0v0"
-                                              href="#"
+                                            <StyledButton
+                                              aria-disabled={false}
+                                              data-test-id="delete"
+                                              disabled={false}
+                                              forwardRef={null}
                                               onClick={[Function]}
-                                              title="Remove tag?"
+                                              role="button"
+                                              size="xsmall"
                                             >
-                                              <forwardRef<Button>
+                                              <Component
+                                                aria-disabled={false}
+                                                className="css-12ogwys-StyledButton edwq9my0"
                                                 data-test-id="delete"
-                                                disabled={false}
-                                                icon="icon-trash"
+                                                forwardRef={null}
+                                                onClick={[Function]}
+                                                role="button"
                                                 size="xsmall"
                                               >
-                                                <Button
-                                                  align="center"
+                                                <button
+                                                  aria-disabled={false}
+                                                  className="css-12ogwys-StyledButton edwq9my0"
                                                   data-test-id="delete"
-                                                  disabled={false}
-                                                  forwardRef={null}
-                                                  icon="icon-trash"
+                                                  onClick={[Function]}
+                                                  role="button"
                                                   size="xsmall"
                                                 >
-                                                  <StyledButton
-                                                    aria-disabled={false}
-                                                    data-test-id="delete"
-                                                    disabled={false}
-                                                    forwardRef={null}
-                                                    onClick={[Function]}
-                                                    role="button"
+                                                  <ButtonLabel
+                                                    align="center"
                                                     size="xsmall"
                                                   >
                                                     <span
@@ -746,53 +750,55 @@ exports[`ProjectTags renders 1`] = `
                                       priority="primary"
                                       stopPropagation={false}
                                     >
-                                      <Link
+                                      <a
                                         className=""
                                         disabled={false}
+                                        href="#"
                                         onClick={[Function]}
                                         title="Remove tag?"
                                       >
-                                        <Anchor
-                                          className=""
+                                        <forwardRef<Button>
+                                          data-test-id="delete"
                                           disabled={false}
-                                          href="#"
-                                          onClick={[Function]}
-                                          title="Remove tag?"
+                                          icon="icon-trash"
+                                          size="xsmall"
                                         >
-                                          <Component
-                                            className=" css-34e2lm-Anchor e18jdd0v0"
+                                          <Button
+                                            align="center"
+                                            data-test-id="delete"
                                             disabled={false}
-                                            href="#"
-                                            onClick={[Function]}
-                                            title="Remove tag?"
+                                            forwardRef={null}
+                                            icon="icon-trash"
+                                            size="xsmall"
                                           >
-                                            <a
-                                              className=" css-34e2lm-Anchor e18jdd0v0"
-                                              href="#"
+                                            <StyledButton
+                                              aria-disabled={false}
+                                              data-test-id="delete"
+                                              disabled={false}
+                                              forwardRef={null}
                                               onClick={[Function]}
-                                              title="Remove tag?"
+                                              role="button"
+                                              size="xsmall"
                                             >
-                                              <forwardRef<Button>
+                                              <Component
+                                                aria-disabled={false}
+                                                className="css-12ogwys-StyledButton edwq9my0"
                                                 data-test-id="delete"
-                                                disabled={false}
-                                                icon="icon-trash"
+                                                forwardRef={null}
+                                                onClick={[Function]}
+                                                role="button"
                                                 size="xsmall"
                                               >
-                                                <Button
-                                                  align="center"
+                                                <button
+                                                  aria-disabled={false}
+                                                  className="css-12ogwys-StyledButton edwq9my0"
                                                   data-test-id="delete"
-                                                  disabled={false}
-                                                  forwardRef={null}
-                                                  icon="icon-trash"
+                                                  onClick={[Function]}
+                                                  role="button"
                                                   size="xsmall"
                                                 >
-                                                  <StyledButton
-                                                    aria-disabled={false}
-                                                    data-test-id="delete"
-                                                    disabled={false}
-                                                    forwardRef={null}
-                                                    onClick={[Function]}
-                                                    role="button"
+                                                  <ButtonLabel
+                                                    align="center"
                                                     size="xsmall"
                                                   >
                                                     <span
@@ -960,53 +966,55 @@ exports[`ProjectTags renders 1`] = `
                                                 priority="primary"
                                                 stopPropagation={false}
                                               >
-                                                <Link
+                                                <a
                                                   className="disabled"
                                                   disabled={true}
+                                                  href="#"
                                                   onClick={[Function]}
                                                   title="Remove tag?"
                                                 >
-                                                  <Anchor
-                                                    className="disabled"
+                                                  <forwardRef<Button>
+                                                    data-test-id="delete"
                                                     disabled={true}
-                                                    href="#"
-                                                    onClick={[Function]}
-                                                    title="Remove tag?"
+                                                    icon="icon-trash"
+                                                    size="xsmall"
                                                   >
-                                                    <Component
-                                                      className="disabled css-a8huvi-Anchor e18jdd0v0"
+                                                    <Button
+                                                      align="center"
+                                                      data-test-id="delete"
                                                       disabled={true}
-                                                      href="#"
-                                                      onClick={[Function]}
-                                                      title="Remove tag?"
+                                                      forwardRef={null}
+                                                      icon="icon-trash"
+                                                      size="xsmall"
                                                     >
-                                                      <a
-                                                        className="disabled css-a8huvi-Anchor e18jdd0v0"
-                                                        href="#"
+                                                      <StyledButton
+                                                        aria-disabled={true}
+                                                        data-test-id="delete"
+                                                        disabled={true}
+                                                        forwardRef={null}
                                                         onClick={[Function]}
-                                                        title="Remove tag?"
+                                                        role="button"
+                                                        size="xsmall"
                                                       >
-                                                        <forwardRef<Button>
+                                                        <Component
+                                                          aria-disabled={true}
+                                                          className="css-1lloe1u-StyledButton edwq9my0"
                                                           data-test-id="delete"
-                                                          disabled={true}
-                                                          icon="icon-trash"
+                                                          forwardRef={null}
+                                                          onClick={[Function]}
+                                                          role="button"
                                                           size="xsmall"
                                                         >
-                                                          <Button
-                                                            align="center"
+                                                          <button
+                                                            aria-disabled={true}
+                                                            className="css-1lloe1u-StyledButton edwq9my0"
                                                             data-test-id="delete"
-                                                            disabled={true}
-                                                            forwardRef={null}
-                                                            icon="icon-trash"
+                                                            onClick={[Function]}
+                                                            role="button"
                                                             size="xsmall"
                                                           >
-                                                            <StyledButton
-                                                              aria-disabled={true}
-                                                              data-test-id="delete"
-                                                              disabled={true}
-                                                              forwardRef={null}
-                                                              onClick={[Function]}
-                                                              role="button"
+                                                            <ButtonLabel
+                                                              align="center"
                                                               size="xsmall"
                                                             >
                                                               <span
@@ -1178,53 +1186,55 @@ exports[`ProjectTags renders 1`] = `
                                                 priority="primary"
                                                 stopPropagation={false}
                                               >
-                                                <Link
+                                                <a
                                                   className="disabled"
                                                   disabled={true}
+                                                  href="#"
                                                   onClick={[Function]}
                                                   title="Remove tag?"
                                                 >
-                                                  <Anchor
-                                                    className="disabled"
+                                                  <forwardRef<Button>
+                                                    data-test-id="delete"
                                                     disabled={true}
-                                                    href="#"
-                                                    onClick={[Function]}
-                                                    title="Remove tag?"
+                                                    icon="icon-trash"
+                                                    size="xsmall"
                                                   >
-                                                    <Component
-                                                      className="disabled css-a8huvi-Anchor e18jdd0v0"
+                                                    <Button
+                                                      align="center"
+                                                      data-test-id="delete"
                                                       disabled={true}
-                                                      href="#"
-                                                      onClick={[Function]}
-                                                      title="Remove tag?"
+                                                      forwardRef={null}
+                                                      icon="icon-trash"
+                                                      size="xsmall"
                                                     >
-                                                      <a
-                                                        className="disabled css-a8huvi-Anchor e18jdd0v0"
-                                                        href="#"
+                                                      <StyledButton
+                                                        aria-disabled={true}
+                                                        data-test-id="delete"
+                                                        disabled={true}
+                                                        forwardRef={null}
                                                         onClick={[Function]}
-                                                        title="Remove tag?"
+                                                        role="button"
+                                                        size="xsmall"
                                                       >
-                                                        <forwardRef<Button>
+                                                        <Component
+                                                          aria-disabled={true}
+                                                          className="css-1lloe1u-StyledButton edwq9my0"
                                                           data-test-id="delete"
-                                                          disabled={true}
-                                                          icon="icon-trash"
+                                                          forwardRef={null}
+                                                          onClick={[Function]}
+                                                          role="button"
                                                           size="xsmall"
                                                         >
-                                                          <Button
-                                                            align="center"
+                                                          <button
+                                                            aria-disabled={true}
+                                                            className="css-1lloe1u-StyledButton edwq9my0"
                                                             data-test-id="delete"
-                                                            disabled={true}
-                                                            forwardRef={null}
-                                                            icon="icon-trash"
+                                                            onClick={[Function]}
+                                                            role="button"
                                                             size="xsmall"
                                                           >
-                                                            <StyledButton
-                                                              aria-disabled={true}
-                                                              data-test-id="delete"
-                                                              disabled={true}
-                                                              forwardRef={null}
-                                                              onClick={[Function]}
-                                                              role="button"
+                                                            <ButtonLabel
+                                                              align="center"
                                                               size="xsmall"
                                                             >
                                                               <span

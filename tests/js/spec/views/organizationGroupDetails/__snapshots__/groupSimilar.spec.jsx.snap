@@ -447,40 +447,18 @@ exports[`Issues Similar View renders with mocked data 1`] = `
                                 priority="primary"
                                 stopPropagation={false}
                               >
-                                <Link
+                                <a
                                   className="btn btn-sm btn-default disabled"
                                   disabled={true}
+                                  href="#"
                                   onClick={[Function]}
                                   title="Merging 0 issues"
                                 >
-                                  <Anchor
-                                    className="btn btn-sm btn-default disabled"
-                                    disabled={true}
-                                    href="#"
-                                    onClick={[Function]}
-                                    title="Merging 0 issues"
-                                  >
-                                    <Component
-                                      className="btn btn-sm btn-default disabled css-a8huvi-Anchor e18jdd0v0"
-                                      disabled={true}
-                                      href="#"
-                                      onClick={[Function]}
-                                      title="Merging 0 issues"
-                                    >
-                                      <a
-                                        className="btn btn-sm btn-default disabled css-a8huvi-Anchor e18jdd0v0"
-                                        href="#"
-                                        onClick={[Function]}
-                                        title="Merging 0 issues"
-                                      >
-                                        Merge
-                                         (
-                                        0
-                                        )
-                                      </a>
-                                    </Component>
-                                  </Anchor>
-                                </Link>
+                                  Merge
+                                   (
+                                  0
+                                  )
+                                </a>
                                 <Modal
                                   animation={false}
                                   autoFocus={true}

@@ -10,7 +10,7 @@ import {t} from 'app/locale';
 import space from 'app/styles/space';
 import Link from 'app/components/links/link';
 import TextOverflow from 'app/components/textOverflow';
-import theme from 'app/utils/theme';
+import {Theme} from 'app/utils/theme';
 
 import {SidebarOrientation} from './types';
 
@@ -97,7 +97,7 @@ const SidebarItem = ({
       <StyledSidebarItem
         data-test-id={props['data-test-id']}
         active={isActive ? 'true' : undefined}
-        to={to ? to : href}
+        to={(to ? to : href) || '#'}
         className={className}
         onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
           typeof onClick === 'function' && onClick(id, event);
@@ -128,21 +128,21 @@ const SidebarItem = ({
 
 export default ReactRouter.withRouter(SidebarItem);
 
-const getActiveStyle = ({active}) => {
+const getActiveStyle = ({active, theme}: {active?: string; theme?: Theme}) => {
   if (!active) {
     return '';
   }
   return css`
-    color: ${theme.white};
+    color: ${theme?.white};
 
     &:active,
     &:focus,
     &:hover {
-      color: ${theme.white};
+      color: ${theme?.white};
     }
 
     &:before {
-      background-color: ${theme.purple};
+      background-color: ${theme?.purple};
     }
   `;
 };
@@ -235,7 +235,7 @@ const SidebarItemLabel = styled('span')`
   justify-content: space-between;
 `;
 
-const getCollapsedBadgeStyle = ({collapsed}) => {
+const getCollapsedBadgeStyle = ({collapsed, theme}) => {
   if (!collapsed) {
     return '';
   }
