@@ -15,6 +15,7 @@ import {Client} from 'app/api';
 import {Group, PlatformExternalIssue, Event, SentryAppInstallation} from 'app/types';
 import {Field, FieldValue} from 'app/views/settings/components/forms/type';
 import FormModel from 'app/views/settings/components/forms/model';
+// import {replaceAtArrayIndex} from 'src/sentry/static/sentry/app/utils/replaceAtArrayIndex';
 
 //0 is a valid choice but empty string, undefined, and null are not
 const hasValue = value => !!value || value === 0;
@@ -31,9 +32,6 @@ type Config = {
   optional_fields?: FieldFromSchema[];
 };
 
-//only need required_fields and optional_fields
-type State = Omit<Config, 'uri'>;
-
 type Props = {
   api: Client;
   group: Group;
@@ -45,7 +43,7 @@ type Props = {
   onSubmitSuccess: (externalIssue: PlatformExternalIssue) => void;
 };
 
-export class SentryAppExternalIssueForm extends React.Component<Props, State> {
+export class SentryAppExternalIssueForm extends React.Component<Props> {
   static propTypes: any = {
     api: PropTypes.object.isRequired,
     group: SentryTypes.Group.isRequired,
@@ -56,7 +54,6 @@ export class SentryAppExternalIssueForm extends React.Component<Props, State> {
     event: SentryTypes.Event,
     onSubmitSuccess: PropTypes.func,
   };
-  state: State = {};
 
   componentDidMount() {
     this.resetStateFromProps();
@@ -64,6 +61,7 @@ export class SentryAppExternalIssueForm extends React.Component<Props, State> {
 
   componentDidUpdate(prevProps: Props) {
     if (prevProps.action !== this.props.action) {
+      // this.model.reset();
       this.resetStateFromProps();
     }
   }
@@ -99,7 +97,8 @@ export class SentryAppExternalIssueForm extends React.Component<Props, State> {
     async (field: FieldFromSchema, input, resolve) => {
       const choices = await this.makeExternalRequest(field, input);
       const options = choices.map(([value, label]) => ({value, label}));
-      return resolve({options});
+      // return resolve({options});
+      return resolve(options);
     },
     200,
     {trailing: true}
@@ -177,83 +176,100 @@ export class SentryAppExternalIssueForm extends React.Component<Props, State> {
   }
 
   handleFieldChange = async (id: string, _value: FieldValue) => {
-    const config = this.state;
-
-    let requiredFields = config.required_fields || [];
-    let optionalFields = config.optional_fields || [];
-
-    const fieldList: FieldFromSchema[] = requiredFields.concat(optionalFields);
-
-    //could have multiple impacted fields
-    const impactedFields = fieldList.filter(({depends_on}) => {
-      if (!depends_on) {
-        return false;
-      }
-      // must be dependent on the field we just set
-      return depends_on.includes(id);
-    });
-
-    //reset all impacted fields first
-    impactedFields.forEach(impactedField =>
-      this.model.fields.delete(impactedField.name || '')
-    );
-
-    //iterate through all the impacted fields and get new values
-    for (const impactedField of impactedFields) {
-      const choices = await this.makeExternalRequest(impactedField, '');
-      const requiredIndex = requiredFields.indexOf(impactedField);
-      const optionalIndex = optionalFields.indexOf(impactedField);
-
-      const updatedField = {...impactedField, choices};
-
-      //immutably update the lists with the updated field depending where we got it from
-      if (requiredIndex > -1) {
-        requiredFields = [
-          ...requiredFields.slice(0, requiredIndex),
-          updatedField,
-          ...requiredFields.slice(requiredIndex + 1),
-        ];
-      } else if (optionalIndex > -1) {
-        optionalFields = [
-          ...optionalFields.slice(0, optionalIndex),
-          updatedField,
-          ...optionalFields.slice(optionalIndex + 1),
-        ];
-      }
-    }
-
-    //set state once at the end to avoid things loading at different times
-    this.setState({
-      required_fields: requiredFields,
-      optional_fields: optionalFields,
-    });
+    this.forceUpdate();
+    setTimeout(() => {
+      console.log('handleFieldChange', id, this.model.getValue(id));
+    }, 100);
   };
+  // handleFieldChange = async (id: string, _value: FieldValue) => {
+  //   const config = this.state;
 
-  renderField = (field: FieldFromSchema) => {
+  //   let requiredFields = config.required_fields || [];
+  //   let optionalFields = config.optional_fields || [];
+
+  //   const fieldList: FieldFromSchema[] = requiredFields.concat(optionalFields);
+
+  //   //could have multiple impacted fields
+  //   const impactedFields = fieldList.filter(({depends_on}) => {
+  //     if (!depends_on) {
+  //       return false;
+  //     }
+  //     // must be dependent on the field we just set
+  //     return depends_on.includes(id);
+  //   });
+
+  //   const choiceArray = await Promise.all(
+  //     impactedFields.map(field => {
+  //       //reset all impacted fields first
+  //       this.model.setValue(field.name || '', undefined);
+  //       return this.makeExternalRequest(field, '');
+  //     })
+  //   );
+
+  //   this.setState((state, props) => {
+  //     // for (let impactedField in )
+  //     impactedFields.forEach((impactedField, i) => {
+  //       const choices = choiceArray[i];
+  //     });
+  //   });
+
+  //   //iterate through all the impacted fields and get new values
+  //   for (const impactedField of impactedFields) {
+  //     const choices = await this.makeExternalRequest(impactedField, '');
+  //     const requiredIndex = requiredFields.indexOf(impactedField);
+  //     const optionalIndex = optionalFields.indexOf(impactedField);
+
+  //     const updatedField = {...impactedField, choices};
+
+  //     //immutably update the lists with the updated field depending where we got it from
+  //     if (requiredIndex > -1) {
+  //       requiredFields = replaceAtArrayIndex(requiredFields, requiredIndex, updatedField);
+  //     } else if (optionalIndex > -1) {
+  //       optionalFields = replaceAtArrayIndex(optionalFields, optionalIndex, updatedField);
+  //     }
+  //   }
+
+  //   //set state once at the end to avoid things loading at different times
+  //   this.setState({
+  //     required_fields: requiredFields,
+  //     optional_fields: optionalFields,
+  //   });
+  // };
+
+  renderField = (field: any) => {
     if (['text', 'textarea'].includes(field.type) && field.default) {
       field = {...field, defaultValue: this.getFieldDefault(field)};
     }
 
+    let key = field.name || '';
     if (field.depends_on) {
       //check if this is dependent on other fields which haven't been set yet
       const shouldDisable = field.depends_on.some(
-        dependentField => !hasValue(this.model.fields.get(dependentField))
+        dependentField => !hasValue(this.model.getValue(dependentField))
       );
       if (shouldDisable) {
-        field = {...field, disabled: true};
+        field = {...field, isDisabled: true};
+        key += '_disabled';
       }
     }
-
+    const choices = field.choices || [];
+    // field.options = choices.map(([value, label]) => ({value, label}));
+    field.options = choices.slice();
     return (
-      <FieldFromConfig key={`${field.name}`} field={field} {...this.fieldProps(field)} />
+      <FieldFromConfig
+        key={key}
+        field={field}
+        deprecatedSelectControl={false}
+        {...this.fieldProps(field)}
+      />
     );
   };
 
   render() {
-    const {sentryAppInstallation, action} = this.props;
+    const {sentryAppInstallation, action, config} = this.props;
 
-    const requiredFields = this.state.required_fields || [];
-    const optionalFields = this.state.optional_fields || [];
+    const requiredFields = config.required_fields || [];
+    const optionalFields = config.optional_fields || [];
     const metaFields: Field[] = [
       {
         type: 'hidden',
@@ -289,8 +305,16 @@ export class SentryAppExternalIssueForm extends React.Component<Props, State> {
         {metaFields.map(this.renderField)}
 
         {requiredFields.map((field: FieldFromSchema) => {
+          const defaultOptions: any = field.choices?.length
+            ? (field.choices as any).map(([value, label]) => ({
+                value,
+                label,
+              }))
+            : true;
+
           field = Object.assign({}, field, {
             choices: field.choices || [],
+            defaultOptions,
             inline: false,
             stacked: true,
             flexibleControlStateSize: true,

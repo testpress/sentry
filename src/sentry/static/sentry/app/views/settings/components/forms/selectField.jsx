@@ -23,6 +23,7 @@ export default class SelectField extends React.Component {
     multiple: PropTypes.bool,
     escapeMarkup: PropTypes.bool,
     small: PropTypes.bool,
+    deprecatedSelectControl: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -33,6 +34,7 @@ export default class SelectField extends React.Component {
     escapeMarkup: true,
     multiple: false,
     small: false,
+    deprecatedSelectControl: true,
     formatMessageValue: (value, props) =>
       (getChoices(props).find(choice => choice[0] === value) || [null, value])[1],
   };
@@ -46,8 +48,10 @@ export default class SelectField extends React.Component {
     } else if (this.props.multiple) {
       // List of optionObjs
       value = optionObj.map(({value: val}) => val);
-    } else {
+    } else if (this.props.deprecatedSelectControl) {
       value = optionObj.value;
+    } else {
+      value = optionObj;
     }
 
     onChange(value, {});

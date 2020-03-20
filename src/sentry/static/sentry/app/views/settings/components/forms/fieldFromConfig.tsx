@@ -26,6 +26,7 @@ type Props = {
   flexibleControlStateSize?: boolean;
   stacked?: boolean;
   inline?: boolean;
+  deprecatedSelectControl?: boolean;
 
   access?: Scope[];
 };
@@ -78,6 +79,7 @@ export default class FieldFromConfig extends React.Component<Props> {
       saveOnBlur: PropTypes.bool,
       getValue: PropTypes.func,
       setValue: PropTypes.func,
+      deprecatedSelectControl: PropTypes.bool,
     }).isRequired,
   };
 

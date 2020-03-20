@@ -172,6 +172,8 @@ const SelectControl = props => {
     convertFromSelect2Choices(typeof choices === 'function' ? choices(props) : choices) ||
     options;
 
+  console.log('SelectControl', props.name, choicesOrOptions);
+
   // It's possible that `choicesOrOptions` does not exist (e.g. in the case of AsyncSelect)
   let mappedValue = value;
 
@@ -183,6 +185,8 @@ const SelectControl = props => {
         ? value.map(val => choicesOrOptions.find(option => option.value === val))
         : choicesOrOptions.find(opt => opt.value === value) || value;
   }
+
+  console.log('mappedValue', mappedValue);
 
   // Allow the provided `styles` prop to override default styles using the same
   // function interface provided by react-styled. This ensures the `provided`
