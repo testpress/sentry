@@ -34,6 +34,9 @@ type Props = {
   onClick?: (e: React.MouseEvent) => void;
   forwardRef?: React.Ref<ButtonElement>;
   name?: string;
+
+  // This is only used with `<ButtonBar>`
+  barId?: string;
 };
 
 type ButtonProps = Omit<React.HTMLProps<ButtonElement>, keyof Props> & Props;
