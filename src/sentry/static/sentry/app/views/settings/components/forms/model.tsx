@@ -298,6 +298,8 @@ class FormModel {
    */
   @action
   setValue(id: string, value: FieldValue, quiet?: boolean) {
+    console.trace();
+    console.log('set valye', id, value);
     const fieldDescriptor = this.fieldDescriptor.get(id);
     let finalValue = value;
 

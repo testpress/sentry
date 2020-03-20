@@ -61,7 +61,7 @@ export class SentryAppExternalIssueForm extends React.Component<Props> {
 
   componentDidUpdate(prevProps: Props) {
     if (prevProps.action !== this.props.action) {
-      // this.model.reset();
+      this.model.reset();
       this.resetStateFromProps();
     }
   }
@@ -115,7 +115,9 @@ export class SentryAppExternalIssueForm extends React.Component<Props> {
 
     if (field.depends_on) {
       const dependentData = field.depends_on.reduce((accum, dependentField: string) => {
-        accum[dependentField] = this.model.fields.get(dependentField);
+        const val = this.model.getValue(dependentField);
+        console.log('value', val);
+        accum[dependentField] = this.model.getValue(dependentField);
         return accum;
       }, {});
       //stringify the data
@@ -176,10 +178,28 @@ export class SentryAppExternalIssueForm extends React.Component<Props> {
   }
 
   handleFieldChange = async (id: string, _value: FieldValue) => {
+    const {config} = this.props;
+
+    const requiredFields = config.required_fields || [];
+    const optionalFields = config.optional_fields || [];
+
+    const fieldList: FieldFromSchema[] = requiredFields.concat(optionalFields);
+
+    //could have multiple impacted fields
+    const impactedFields = fieldList.filter(({depends_on}) => {
+      if (!depends_on) {
+        return false;
+      }
+      // must be dependent on the field we just set
+      return depends_on.includes(id);
+    });
+
+    impactedFields.map(field => {
+      //reset all impacted fields first
+      console.log('reset', field.name);
+      this.model.setValue(field.name || '', '', true);
+    });
     this.forceUpdate();
-    setTimeout(() => {
-      console.log('handleFieldChange', id, this.model.getValue(id));
-    }, 100);
   };
   // handleFieldChange = async (id: string, _value: FieldValue) => {
   //   const config = this.state;
@@ -236,7 +256,7 @@ export class SentryAppExternalIssueForm extends React.Component<Props> {
   //   });
   // };
 
-  renderField = (field: any) => {
+  renderField = (field: FieldFromSchema) => {
     if (['text', 'textarea'].includes(field.type) && field.default) {
       field = {...field, defaultValue: this.getFieldDefault(field)};
     }
@@ -248,13 +268,13 @@ export class SentryAppExternalIssueForm extends React.Component<Props> {
         dependentField => !hasValue(this.model.getValue(dependentField))
       );
       if (shouldDisable) {
-        field = {...field, isDisabled: true};
+        field = {...field, disabled: true};
         key += '_disabled';
       }
     }
-    const choices = field.choices || [];
+    // const choices = field.choices || [];
     // field.options = choices.map(([value, label]) => ({value, label}));
-    field.options = choices.slice();
+    // field.options = choices.slice();
     return (
       <FieldFromConfig
         key={key}

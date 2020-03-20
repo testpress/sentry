@@ -54,6 +54,8 @@ export default class SelectField extends React.Component {
       value = optionObj;
     }
 
+    console.log('onChange', onChange);
+
     onChange(value, {});
     onBlur(value, {});
   };

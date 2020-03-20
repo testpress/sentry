@@ -164,6 +164,7 @@ const SelectControl = props => {
     components,
     styles,
     value,
+    disabled,
     ...rest
   } = props;
 
@@ -171,8 +172,6 @@ const SelectControl = props => {
   const choicesOrOptions =
     convertFromSelect2Choices(typeof choices === 'function' ? choices(props) : choices) ||
     options;
-
-  console.log('SelectControl', props.name, choicesOrOptions);
 
   // It's possible that `choicesOrOptions` does not exist (e.g. in the case of AsyncSelect)
   let mappedValue = value;
@@ -185,8 +184,6 @@ const SelectControl = props => {
         ? value.map(val => choicesOrOptions.find(option => option.value === val))
         : choicesOrOptions.find(opt => opt.value === value) || value;
   }
-
-  console.log('mappedValue', mappedValue);
 
   // Allow the provided `styles` prop to override default styles using the same
   // function interface provided by react-styled. This ensures the `provided`
@@ -209,17 +206,24 @@ const SelectControl = props => {
     IndicatorSeparator: null,
   };
 
+  //Props that need to be mapped based off the upgrade guide https://react-select.com/upgrade-guide#prop-update-guide
+  //Note this is an incomplete list of mappings and more could be needed
+  const mappedProps = {
+    isClearable: clearable,
+    isDisabled: disabled,
+    isMulti: props.multiple || props.multi,
+  };
+
   return (
     <SelectPicker
       styles={mappedStyles}
       components={{...replacedComponents, ...components}}
       async={async}
       creatable={creatable}
-      clearable={clearable}
       backspaceRemovesValue={clearable}
       value={mappedValue}
-      isMulti={props.multiple || props.multi}
       options={choicesOrOptions}
+      {...mappedProps}
       {...rest}
     />
   );
