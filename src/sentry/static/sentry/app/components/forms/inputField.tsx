@@ -7,9 +7,6 @@ type InputFieldProps = FormField['props'] & {
   placeholder: string;
   inputStyle?: object;
   onBlur?: (event?: React.FocusEvent<HTMLInputElement>) => void;
-  onKeyPress?: (event?: React.KeyboardEvent<HTMLInputElement>) => void;
-  onKeyDown?: (event?: React.KeyboardEvent<HTMLInputElement>) => void;
-  autoComplete?: string;
 };
 
 export default class InputField<
@@ -19,7 +16,6 @@ export default class InputField<
   static propTypes = {
     ...FormField.propTypes,
     placeholder: PropTypes.string,
-    autoComplete: PropTypes.string,
   };
 
   getAttributes() {
@@ -29,7 +25,6 @@ export default class InputField<
   getField() {
     return (
       <input
-        autoComplete={this.props.autoComplete}
         id={this.getId()}
         type={this.getType()}
         className="form-control"
@@ -41,8 +36,6 @@ export default class InputField<
         value={this.state.value as string | number} //can't pass in boolean here
         style={this.props.inputStyle}
         onBlur={this.props.onBlur}
-        onKeyPress={this.props.onKeyPress}
-        onKeyDown={this.props.onKeyDown}
         {...this.getAttributes()}
       />
     );
