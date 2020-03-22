@@ -58,7 +58,7 @@ type Props = {
 
 class DataPrivacyRulesPanelSelectorField extends React.Component<Props, State> {
   state: State = {
-    searchTerm: this.props.value || '',
+    searchTerm: '',
     showOptions: false,
     suggestions: [],
   };
@@ -101,7 +101,7 @@ class DataPrivacyRulesPanelSelectorField extends React.Component<Props, State> {
         searchTerm,
       },
       () => {
-        this.props.onChange(this.state.searchTerm);
+        //this.props.onChange(this.state.searchTerm);
       }
     );
   };
