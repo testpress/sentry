@@ -27,19 +27,16 @@ const valueTypes = {
   ],
 };
 
-// const booleanLogicTypes = {
-//   '|': '|',
-//   '&': '&',
-//   '!': '!',
-// };
+const booleanLogicTypes = {
+  booleanOperators: ['||', '&&', '!'],
+};
 
 const selectors = {
   ...valueTypes,
-  //   ...booleanLogicTypes,
+  ...booleanLogicTypes,
 };
 
 type State = {
-  searchTerm: string;
   showOptions: boolean;
   suggestions: Array<string>;
   selector?: {
@@ -58,19 +55,36 @@ type Props = {
 
 class DataPrivacyRulesPanelSelectorField extends React.Component<Props, State> {
   state: State = {
-    searchTerm: '',
     showOptions: false,
     suggestions: [],
   };
 
-  handleChange = (searchTerm: string) => {
-    if (searchTerm.length === 0) {
-      this.setState({
-        searchTerm,
-        suggestions: [],
-        showOptions: false,
-        selector: undefined,
-      });
+  inputField = React.createRef<HTMLInputElement>();
+
+  getCursorPosition = () => {
+    if (!this.inputField.current) {
+      return -1;
+    }
+    return this.inputField.current.selectionStart;
+  };
+
+  handleChange = (updatedValue: string) => {
+    const splittedValue = updatedValue.split(' ');
+    const searchTerm = splittedValue[splittedValue.length - 1];
+
+    const {onChange} = this.props;
+
+    if (updatedValue.length === 0) {
+      this.setState(
+        {
+          suggestions: [],
+          showOptions: false,
+          selector: undefined,
+        },
+        () => {
+          onChange(updatedValue);
+        }
+      );
 
       return;
     }
@@ -80,39 +94,48 @@ class DataPrivacyRulesPanelSelectorField extends React.Component<Props, State> {
     if (
       selector?.key &&
       searchTerm !== selector?.key &&
-      !selectors[selector?.key].includes(searchTerm.substr(1))
+      !!searchTerm &&
+      !!searchTerm &&
+      !selectors[selector?.key].includes(
+        selector?.key === 'booleanOperators' ? searchTerm : searchTerm.substr(1)
+      )
     ) {
       const searchTermAfterSelector = searchTerm.substr(1);
       const filteredSelectorValues = selector.values.filter(
         selectorValue => selectorValue.indexOf(searchTermAfterSelector.toLowerCase()) > -1
       );
 
-      this.setState({
-        searchTerm,
-        suggestions: filteredSelectorValues,
-        showOptions: true,
-      });
+      this.setState(
+        {
+          suggestions: filteredSelectorValues,
+          showOptions: true,
+        },
+        () => {
+          onChange(updatedValue);
+        }
+      );
 
       return;
     }
 
-    this.setState(
-      {
-        searchTerm,
-      },
-      () => {
-        //this.props.onChange(this.state.searchTerm);
-      }
-    );
+    onChange(updatedValue);
   };
 
   handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const selectorValues = selectors[event.key];
+    const {value} = this.props;
 
-    if (selectorValues && event.key !== this.state.selector?.key) {
+    let key = event.key;
+    let selectorValues = selectors[event.key];
+
+    if (value.trim().length > 0 && event.which === 32) {
+      selectorValues = selectors.booleanOperators;
+      key = 'booleanOperators';
+    }
+
+    if (selectorValues && key !== this.state.selector?.key) {
       this.setState({
         selector: {
-          key: event.key as keyof typeof selectors,
+          key: key as keyof typeof selectors,
           values: selectorValues,
         },
         suggestions: selectorValues,
@@ -122,24 +145,37 @@ class DataPrivacyRulesPanelSelectorField extends React.Component<Props, State> {
   };
 
   handleClickSuggestionItem = (suggestion: string) => () => {
-    this.setState(prevState => ({
-      searchTerm: `${prevState.selector?.key}${suggestion}`,
-      showOptions: false,
-    }));
+    const {selector} = this.state;
+    const {value} = this.props;
+    let newValue = `${value} ${selector?.key}${suggestion}`;
+
+    if (selector?.key === 'booleanOperators') {
+      newValue = `${value} ${suggestion}`;
+    }
+
+    this.setState(
+      {
+        showOptions: false,
+      },
+      () => {
+        this.props.onChange(newValue);
+      }
+    );
   };
 
   render() {
-    const {error, onBlur, disabled} = this.props;
-    const {searchTerm, showOptions, suggestions} = this.state;
+    const {error, onBlur, disabled, value} = this.props;
+    const {showOptions, suggestions} = this.state;
 
     return (
       <Wrapper>
         <StyledTextField
+          inputRef={this.inputField}
           name="from"
           placeholder={t('ex. strings, numbers, custom')}
           onChange={this.handleChange}
           autoComplete="off"
-          value={searchTerm}
+          value={value}
           onKeyPress={this.handleKeyPress}
           error={error}
           onBlur={onBlur}

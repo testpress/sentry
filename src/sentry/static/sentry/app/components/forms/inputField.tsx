@@ -9,6 +9,7 @@ type InputFieldProps = FormField['props'] & {
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   autoComplete?: string;
+  inputRef?: React.RefObject<HTMLInputElement>;
 };
 
 export default class InputField<
@@ -28,6 +29,7 @@ export default class InputField<
     return (
       <input
         id={this.getId()}
+        ref={this.props.inputRef}
         type={this.getType()}
         className="form-control"
         autoComplete={this.props.autoComplete}
