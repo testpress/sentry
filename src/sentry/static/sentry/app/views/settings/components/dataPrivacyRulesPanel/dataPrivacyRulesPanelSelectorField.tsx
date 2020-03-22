@@ -145,20 +145,14 @@ class DataPrivacyRulesPanelSelectorField extends React.Component<Props, State> {
   };
 
   handleClickSuggestionItem = (suggestion: string) => () => {
-    const {selector} = this.state;
-    const {value} = this.props;
-    let newValue = `${value} ${selector?.key}${suggestion}`;
-
-    if (selector?.key === 'booleanOperators') {
-      newValue = `${value} ${suggestion}`;
-    }
+    const {value, onChange} = this.props;
 
     this.setState(
       {
         showOptions: false,
       },
       () => {
-        this.props.onChange(newValue);
+        onChange(`${value}${suggestion}`);
       }
     );
   };
