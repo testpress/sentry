@@ -27,14 +27,6 @@ type State = {
   isOpen: boolean;
 };
 
-// Using an inline-block solves the container being smaller
-// than the elements it is wrapping
-const Container = styled('span')<{
-  containerDisplayMode?: React.CSSProperties['display'];
-}>`
-  ${p => p.containerDisplayMode && `display: ${p.containerDisplayMode}`};
-`;
-
 class Tooltip extends React.Component<Props, State> {
   static propTypes = {
     /**
@@ -233,7 +225,17 @@ class Tooltip extends React.Component<Props, State> {
   }
 }
 
-const TooltipContent = styled('div')<Pick<Props, 'popperStyle'>>`
+// Using an inline-block solves the container being smaller
+// than the elements it is wrapping
+const Container = styled('span')<{
+  containerDisplayMode?: React.CSSProperties['display'];
+}>`
+  ${p => p.containerDisplayMode && `display: ${p.containerDisplayMode}`};
+  max-width: 100%;
+`;
+
+type TooltipContentProps = Pick<Props, 'popperStyle'>;
+const TooltipContent = styled('div')<TooltipContentProps>`
   color: #fff;
   background: #000;
   opacity: 0.9;

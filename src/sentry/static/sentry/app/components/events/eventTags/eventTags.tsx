@@ -51,5 +51,5 @@ const EventTags = ({event: {tags}, orgId, projectId, location}: Props) => {
 export default EventTags;
 
 const StyledEventDataSection = styled(EventDataSection)`
-  padding-bottom: ${space(3)};
+  margin-bottom: ${space(3)};
 `;
