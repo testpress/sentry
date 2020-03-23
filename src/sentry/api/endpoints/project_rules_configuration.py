@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from sentry.api.bases.project import ProjectEndpoint, StrictProjectPermission
 from sentry.rules import rules
 from sentry.rules.actions.notify_event_service import NotifyEventServiceAction
-from sentry import features
 
 
 class ProjectRulesConfigurationEndpoint(ProjectEndpoint):
@@ -27,11 +26,9 @@ class ProjectRulesConfigurationEndpoint(ProjectEndpoint):
             if hasattr(node, "form_fields"):
                 context["formFields"] = node.form_fields
 
-            if (
-                features.has("organizations:issue-alerts-targeting", project.organization)
-                and isinstance(node, NotifyEventServiceAction)
-                and len(node.get_services()) == 0
-            ):
+            # It is possible for a project to have no services. In that scenario we do not want the front end to render
+            # the action as the action does not have options.
+            if isinstance(node, NotifyEventServiceAction) and len(node.get_services()) == 0:
                 continue
 
             if rule_type.startswith("condition/"):
