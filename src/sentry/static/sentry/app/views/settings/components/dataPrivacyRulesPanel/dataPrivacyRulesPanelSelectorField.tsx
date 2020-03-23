@@ -96,7 +96,11 @@ class DataPrivacyRulesPanelSelectorField extends React.Component<Props, State> {
 
     const currentSelector = selectors[selectors.length - 1];
 
-    if (currentSelector) {
+    if (
+      currentSelector &&
+      !!lastTypedTerm &&
+      !currentSelector.values.includes(lastTypedTerm)
+    ) {
       const afterlastTypedTerm = lastTypedTerm.substr(1);
       const filteredSelectorValues = currentSelector.values.filter(
         selectorValue => selectorValue.indexOf(afterlastTypedTerm.toLowerCase()) > -1
