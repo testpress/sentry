@@ -286,16 +286,16 @@ exports[`IntegrationDetailsModal renders simple integration 1`] = `
     type="warning"
   >
     <Component
-      className="css-bcq0ox-Alert ejthpj82"
+      className="css-q90wys-Alert ejthpj82"
       iconSize="24px"
       type="warning"
     >
       <div
-        className="ref-warning css-bcq0ox-Alert ejthpj82"
+        className="ref-warning css-q90wys-Alert ejthpj82"
       >
         <StyledTextBlock>
           <div
-            className="css-1n7zgo7-TextBlock-StyledTextBlock ejthpj81"
+            className="css-1kyjxgv-StyledTextBlock ejthpj81"
           >
             <span
               dangerouslySetInnerHTML={
