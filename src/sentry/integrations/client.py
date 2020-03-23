@@ -145,7 +145,7 @@ class ApiClient(object):
             tags={"integration": self.integration_name, "status": code},
         )
 
-        span.set_tag("status_code", code)
+        span.set_http_status(code)
         span.set_tag("integration", self.integration_name)
 
         extra = {
@@ -216,17 +216,14 @@ class ApiClient(object):
                 )
                 resp.raise_for_status()
             except ConnectionError as e:
-                span.set_status("unavailable")
                 self.track_response_data("connection_error", span, e)
                 raise ApiHostError.from_exception(e)
             except Timeout as e:
-                span.set_status("deadline_exceeded")
                 self.track_response_data("timeout", span, e)
                 raise ApiTimeoutError.from_exception(e)
             except HTTPError as e:
                 resp = e.response
                 if resp is None:
-                    span.set_status("unknown_error")
                     self.track_response_data("unknown", span, e)
                     self.logger.exception(
                         "request.error",
@@ -237,7 +234,6 @@ class ApiClient(object):
                 self.track_response_data(resp.status_code, span, e)
                 raise ApiError.from_response(resp)
 
-            span.set_status("ok")
             self.track_response_data(resp.status_code, span)
 
         if resp.status_code == 204:
