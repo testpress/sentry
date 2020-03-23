@@ -31,18 +31,20 @@ const booleanLogicTypes = {
   booleanOperators: ['||', '&&', '!'],
 };
 
-const selectors = {
+const selectorTypes = {
   ...valueTypes,
   ...booleanLogicTypes,
+};
+
+type Selector = {
+  key: keyof typeof selectorTypes;
+  values: Array<string>;
 };
 
 type State = {
   showOptions: boolean;
   suggestions: Array<string>;
-  selector?: {
-    key: keyof typeof selectors;
-    values: Array<string>;
-  };
+  selectors: Array<Selector>;
 };
 
 type Props = {
@@ -57,6 +59,7 @@ class DataPrivacyRulesPanelSelectorField extends React.Component<Props, State> {
   state: State = {
     showOptions: false,
     suggestions: [],
+    selectors: [],
   };
 
   inputField = React.createRef<HTMLInputElement>();
@@ -68,41 +71,35 @@ class DataPrivacyRulesPanelSelectorField extends React.Component<Props, State> {
     return this.inputField.current.selectionStart;
   };
 
-  handleChange = (updatedValue: string) => {
-    const splittedValue = updatedValue.split(' ');
-    const searchTerm = splittedValue[splittedValue.length - 1];
+  handleChange = (searchTerm: string) => {
+    const splittedSearchTerm = searchTerm.split(' ');
+    const lastTypedTerm = splittedSearchTerm[splittedSearchTerm.length - 1];
 
     const {onChange} = this.props;
 
-    if (updatedValue.length === 0) {
+    if (searchTerm.length === 0) {
       this.setState(
         {
           suggestions: [],
           showOptions: false,
-          selector: undefined,
+          selectors: [],
         },
         () => {
-          onChange(updatedValue);
+          onChange(searchTerm);
         }
       );
 
       return;
     }
 
-    const {selector} = this.state;
+    const {selectors} = this.state;
 
-    if (
-      selector?.key &&
-      searchTerm !== selector?.key &&
-      !!searchTerm &&
-      !!searchTerm &&
-      !selectors[selector?.key].includes(
-        selector?.key === 'booleanOperators' ? searchTerm : searchTerm.substr(1)
-      )
-    ) {
-      const searchTermAfterSelector = searchTerm.substr(1);
-      const filteredSelectorValues = selector.values.filter(
-        selectorValue => selectorValue.indexOf(searchTermAfterSelector.toLowerCase()) > -1
+    const currentSelector = selectors[selectors.length - 1];
+
+    if (currentSelector) {
+      const afterlastTypedTerm = lastTypedTerm.substr(1);
+      const filteredSelectorValues = currentSelector.values.filter(
+        selectorValue => selectorValue.indexOf(afterlastTypedTerm.toLowerCase()) > -1
       );
 
       this.setState(
@@ -111,33 +108,39 @@ class DataPrivacyRulesPanelSelectorField extends React.Component<Props, State> {
           showOptions: true,
         },
         () => {
-          onChange(updatedValue);
+          onChange(searchTerm);
         }
       );
 
       return;
     }
 
-    onChange(updatedValue);
+    onChange(searchTerm);
   };
 
   handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const {value} = this.props;
 
     let key = event.key;
-    let selectorValues = selectors[event.key];
+    let selectorValues = selectorTypes[event.key];
 
     if (value.trim().length > 0 && event.which === 32) {
-      selectorValues = selectors.booleanOperators;
+      selectorValues = selectorTypes.booleanOperators;
       key = 'booleanOperators';
     }
 
-    if (selectorValues && key !== this.state.selector?.key) {
+    const {selectors} = this.state;
+    const currentSelector = selectors[selectors.length - 1];
+
+    if (selectorValues && currentSelector?.key !== key) {
       this.setState({
-        selector: {
-          key: key as keyof typeof selectors,
-          values: selectorValues,
-        },
+        selectors: [
+          ...selectors,
+          {
+            key: key as keyof typeof selectorTypes,
+            values: selectorValues,
+          },
+        ],
         suggestions: selectorValues,
         showOptions: true,
       });
