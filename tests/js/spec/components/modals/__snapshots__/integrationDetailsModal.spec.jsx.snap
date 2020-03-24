@@ -254,7 +254,7 @@ exports[`IntegrationDetailsModal renders simple integration 1`] = `
         <div
           className="css-vurnku"
         >
-          <ForwardRef
+          <ForwardRef(ExternalLink)
             href="http://example.com/integration_source_url"
           >
             <a
@@ -264,8 +264,8 @@ exports[`IntegrationDetailsModal renders simple integration 1`] = `
             >
               View Source
             </a>
-          </ForwardRef>
-          <ForwardRef
+          </ForwardRef(ExternalLink)>
+          <ForwardRef(ExternalLink)
             href="http://example.com/integration_issue_url"
           >
             <a
@@ -275,7 +275,7 @@ exports[`IntegrationDetailsModal renders simple integration 1`] = `
             >
               Report Issue
             </a>
-          </ForwardRef>
+          </ForwardRef(ExternalLink)>
         </div>
       </Styled(div)>
     </div>

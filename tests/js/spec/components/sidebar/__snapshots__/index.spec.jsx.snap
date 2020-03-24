@@ -982,7 +982,7 @@ exports[`Sidebar SidebarHelp can toggle help menu 1`] = `
           className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
           href="https://forum.sentry.io/"
         >
-          <ForwardRef
+          <ForwardRef(ExternalLink)
             className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
             href="https://forum.sentry.io/"
           >
@@ -1002,7 +1002,7 @@ exports[`Sidebar SidebarHelp can toggle help menu 1`] = `
                 </span>
               </MenuItemLabel>
             </a>
-          </ForwardRef>
+          </ForwardRef(ExternalLink)>
         </SidebarMenuItemLink>
       </StyledSidebarMenuItemLink>
     </SidebarMenuItem>
@@ -1016,7 +1016,7 @@ exports[`Sidebar SidebarHelp can toggle help menu 1`] = `
           className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
           href="https://status.sentry.io/"
         >
-          <ForwardRef
+          <ForwardRef(ExternalLink)
             className="css-1eunyni-StyledSidebarMenuItemLink eev51g21"
             href="https://status.sentry.io/"
           >
@@ -1036,7 +1036,7 @@ exports[`Sidebar SidebarHelp can toggle help menu 1`] = `
                 </span>
               </MenuItemLabel>
             </a>
-          </ForwardRef>
+          </ForwardRef(ExternalLink)>
         </SidebarMenuItemLink>
       </StyledSidebarMenuItemLink>
     </SidebarMenuItem>
@@ -1076,7 +1076,7 @@ exports[`Sidebar SidebarPanel can display Broadcasts panel and mark as seen 1`] 
         <div
           className="css-166h1v-Text ekutvbl3"
         >
-          <ForwardRef
+          <ForwardRef(ExternalLink)
             href="https://docs.sentry.io/hosted/clients/javascript/sourcemaps/#uploading-source-maps-to-sentry"
           >
             <a
@@ -1086,7 +1086,7 @@ exports[`Sidebar SidebarPanel can display Broadcasts panel and mark as seen 1`] 
             >
               Read More
             </a>
-          </ForwardRef>
+          </ForwardRef(ExternalLink)>
         </div>
       </Text>
     </div>
@@ -1181,7 +1181,7 @@ exports[`Sidebar SidebarPanel can show Incidents in Sidebar Panel 1`] = `
                   role="button"
                   size="small"
                 >
-                  <ForwardRef
+                  <ForwardRef(ExternalLink)
                     aria-disabled={false}
                     aria-label="Learn more"
                     className="css-12ogwys-StyledButton edwq9my0"
@@ -1212,7 +1212,7 @@ exports[`Sidebar SidebarPanel can show Incidents in Sidebar Panel 1`] = `
                         </span>
                       </ButtonLabel>
                     </a>
-                  </ForwardRef>
+                  </ForwardRef(ExternalLink)>
                 </Component>
               </StyledButton>
             </Button>

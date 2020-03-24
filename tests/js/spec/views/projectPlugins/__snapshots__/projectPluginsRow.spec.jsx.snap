@@ -253,7 +253,7 @@ exports[`ProjectPluginRow renders 1`] = `
                             }
                             href="https://github.com/getsentry/sentry"
                           >
-                            <ForwardRef
+                            <ForwardRef(ExternalLink)
                               className="css-1nx57m5-grayText"
                               href="https://github.com/getsentry/sentry"
                             >
@@ -265,7 +265,7 @@ exports[`ProjectPluginRow renders 1`] = `
                               >
                                 Sentry Team
                               </a>
-                            </ForwardRef>
+                            </ForwardRef(ExternalLink)>
                           </EmotionCssPropInternal>
                           <span>
                              

@@ -8,16 +8,19 @@ type Props = {
   openInNewTab?: boolean;
 } & Omit<AnchorProps, 'target'>;
 
-const ExternalLink = React.forwardRef<HTMLAnchorElement, Props>(
-  ({openInNewTab = true, ...props}, ref) => (
+const ExternalLink = React.forwardRef<HTMLAnchorElement, Props>(function ExternalLink(
+  {openInNewTab = true, ...props},
+  ref
+) {
+  return (
     <a
       ref={ref}
       target={openInNewTab ? '_blank' : '_self'}
       rel="noreferrer noopener"
       {...props}
     />
-  )
-);
+  );
+});
 
 ExternalLink.propTypes = {
   openInNewTab: PropTypes.bool,

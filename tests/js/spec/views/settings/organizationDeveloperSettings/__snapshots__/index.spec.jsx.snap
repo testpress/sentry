@@ -136,7 +136,7 @@ exports[`Organization Developer Settings when no Apps exist displays empty state
                 size="normal"
                 withoutMarginBottom={false}
               >
-                <ForwardRef
+                <ForwardRef(ExternalLink)
                   className="css-1yd43zs-StyledLink e1ylhppg0"
                   href="https://docs.sentry.io/workflow/integrations/integration-platform/"
                   openInNewTab={false}
@@ -177,7 +177,7 @@ exports[`Organization Developer Settings when no Apps exist displays empty state
                       </ForwardRef>
                     </InlineSvg>
                   </a>
-                </ForwardRef>
+                </ForwardRef(ExternalLink)>
               </Component>
             </StyledLink>
           </AlertLink>
