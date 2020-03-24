@@ -230,7 +230,7 @@ class DataPrivacyRulesPanel extends React.Component<Props, State> {
   };
 
   handleCancelForm = () => {
-    addLoadingMessage(t('Cancelling...'));
+    addLoadingMessage(t('Canceling...'));
     this.setState(prevState => ({
       rules: prevState.savedRules,
     }));
@@ -245,8 +245,8 @@ class DataPrivacyRulesPanel extends React.Component<Props, State> {
         <Panel>
           <StyledPanelHeader>{t('Data Privacy Rules')}</StyledPanelHeader>
           <PanelAlert type="info">
-            {additionalContext}
-            {tct('To learn more about datascubbing, [linkToDocs].', {
+            {additionalContext}{' '}
+            {tct('For more details, see [linkToDocs].', {
               linkToDocs: (
                 <ExternalLink href="https://docs.sentry.io/data-management/advanced-datascrubbing/">
                   {t('read the docs.')}
