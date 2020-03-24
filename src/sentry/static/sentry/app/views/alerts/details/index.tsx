@@ -8,10 +8,16 @@ import {markIncidentAsSeen} from 'app/actionCreators/incident';
 import {t} from 'app/locale';
 import withApi from 'app/utils/withApi';
 
-import {fetchIncident, updateSubscription, updateStatus, isOpen} from '../utils';
+import {
+  fetchIncident,
+  fetchIncidentStats,
+  updateSubscription,
+  updateStatus,
+  isOpen,
+} from '../utils';
 import DetailsBody from './body';
 import DetailsHeader from './header';
-import {IncidentStatus, Incident} from '../types';
+import {Incident, IncidentStats, IncidentStatus} from '../types';
 
 type Props = {
   api: Client;
@@ -21,6 +27,7 @@ type State = {
   isLoading: boolean;
   hasError: boolean;
   incident?: Incident;
+  stats?: IncidentStats;
 };
 
 class IncidentDetails extends React.Component<Props, State> {
@@ -41,8 +48,12 @@ class IncidentDetails extends React.Component<Props, State> {
     } = this.props;
 
     try {
-      const incident = await fetchIncident(api, orgId, alertId);
-      this.setState({incident, isLoading: false, hasError: false});
+      const [incident, stats] = await Promise.all([
+        fetchIncident(api, orgId, alertId),
+        fetchIncidentStats(api, orgId, alertId),
+      ]);
+
+      this.setState({incident, stats, isLoading: false, hasError: false});
       markIncidentAsSeen(api, orgId, incident);
     } catch (_err) {
       this.setState({isLoading: false, hasError: true});
@@ -110,7 +121,7 @@ class IncidentDetails extends React.Component<Props, State> {
   };
 
   render() {
-    const {incident, hasError} = this.state;
+    const {incident, stats, hasError} = this.state;
     const {params} = this.props;
 
     return (
@@ -119,11 +130,12 @@ class IncidentDetails extends React.Component<Props, State> {
           hasIncidentDetailsError={hasError}
           params={params}
           incident={incident}
+          stats={stats}
           onSubscriptionChange={this.handleSubscriptionChange}
           onStatusChange={this.handleStatusChange}
         />
 
-        <DetailsBody {...this.props} incident={incident} />
+        <DetailsBody {...this.props} incident={incident} stats={stats} />
       </React.Fragment>
     );
   }
