@@ -43,7 +43,7 @@ class Link extends React.Component<Props> {
       return <RouterLink to={to} ref={ref as any} {...props} />;
     }
 
-    if (to === 'string') {
+    if (typeof to === 'string') {
       return <Anchor href={to} ref={ref} {...props} />;
     }
 
@@ -59,10 +59,10 @@ const Anchor = styled('a', {
   ${p =>
     p.disabled &&
     `
-    color:${p.theme.disabled};
-    pointer-events: none;
-    :hover {
-      color: ${p.theme.disabled};
-    }
-    `};
+  color:${p.theme.disabled};
+  pointer-events: none;
+  :hover {
+    color: ${p.theme.disabled};
+  }
+  `};
 `;
